@@ -1,0 +1,71 @@
+package com.uff.fagulha.servlet;
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.Invocation;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Response;
+
+import com.uff.fagulha.model.Usuario;
+import com.uff.fagulha.util.Encriptador;
+
+/**
+ *
+ * @author Felipe Vila Chã
+ */
+public class CadastraUsuario extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+	WebTarget wt;
+    Usuario usuario;
+    Integer status;
+    
+	@Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+		
+		try {
+            Client client = ClientBuilder.newClient();
+            HttpSession session = request.getSession();
+            URI uri;
+            
+            String base = "https://api-verde-esperanca.herokuapp.com/resources/usuario";
+
+            uri = new URI(base);
+            wt = client.target(uri);
+            wt.request().accept("application/xml");
+            
+            usuario.setId(Integer.parseInt(request.getParameter("id_usuario")));
+            usuario.setCidade(request.getParameter("cidade"));
+            usuario.setCpf(request.getParameter("cpf"));
+            usuario.setDataNasc(new Date(request.getParameter("dataNasc")));
+            usuario.setEmail(request.getParameter("email"));
+            usuario.setEstado(request.getParameter("estado"));
+            usuario.setNome(request.getParameter("nome"));
+            usuario.setPais(request.getParameter("pais"));
+            usuario.setSenha(new Encriptador().encripta(request.getParameter("senha")));
+            
+            Invocation call = wt.request().buildPost(Entity.xml(usuario));
+            Response resposta = call.invoke();
+            
+            session.setAttribute("usuario", usuario);
+            
+            response.sendRedirect("https://verde-esperanca.herokuapp.com");
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(CadastraUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+}
