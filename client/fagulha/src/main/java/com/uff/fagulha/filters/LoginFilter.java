@@ -40,8 +40,7 @@ public class LoginFilter implements Filter {
             String homePage = "";
 
             if("email".equals(nomeParametro)) {
-                if (!valorParametro.equals("admin@admin")) {
-                	homePage = "https://verde-esperanca.herokuapp.com"; 
+                if (!valorParametro.equals("admin@admin.com")) {
                             
                 	boolean found = false;
                             
@@ -54,18 +53,17 @@ public class LoginFilter implements Filter {
                     }
                             
                     if(!found){
-                    	Cookie c = new Cookie(valorParametro, "logado");
-                        c.setMaxAge(30*60);
+                    	Cookie c = new Cookie("logado", valorParametro);
+                        c.setMaxAge(-1);
                         res.addCookie(c);
                     }
-                } else {
-                	homePage = "https://verde-esperanca.herokuapp.com/homeAdmin";
-                }
                     
-                res.sendRedirect(homePage);
-           } else {
-        	   chain.doFilter(request, response);
-           }
+                    chain.doFilter(request, response);
+                    
+                } else {
+                	request.getRequestDispatcher("/homeAdmin").forward(request, response);
+                }
+            }
         }
     }
 

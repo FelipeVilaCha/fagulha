@@ -3,6 +3,8 @@ package com.uff.fagulha.servlet;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,7 +19,6 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.Response;
 
 import com.uff.fagulha.model.Usuario;
 import com.uff.fagulha.util.Encriptador;
@@ -30,9 +31,8 @@ public class CadastraUsuario extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	WebTarget wt;
-    Usuario usuario;
     Integer status;
-    
+
 	@Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -42,16 +42,25 @@ public class CadastraUsuario extends HttpServlet {
             HttpSession session = request.getSession();
             URI uri;
             
-            String base = "https://api-verde-esperanca.herokuapp.com/resources/usuario";
+            String base = "https://api-fagulha.herokuapp.com/resources/usuario";
 
             uri = new URI(base);
             wt = client.target(uri);
             wt.request().accept("application/xml");
             
-            usuario.setId(Integer.parseInt(request.getParameter("id_usuario")));
+            Usuario usuario = new Usuario();
+            
+            SimpleDateFormat f = new SimpleDateFormat("dd-MMM-yyyy");
+            Date dataNasc = new Date();
+            try {
+                dataNasc = f.parse(request.getParameter("dataNasc"));
+            } catch (ParseException e) {
+            	Logger.getLogger(CadastraUsuario.class.getName()).log(Level.SEVERE, null, e);
+            }
+            
+            usuario.setDataNasc(dataNasc);
             usuario.setCidade(request.getParameter("cidade"));
             usuario.setCpf(request.getParameter("cpf"));
-            usuario.setDataNasc(new Date(request.getParameter("dataNasc")));
             usuario.setEmail(request.getParameter("email"));
             usuario.setEstado(request.getParameter("estado"));
             usuario.setNome(request.getParameter("nome"));
@@ -59,11 +68,11 @@ public class CadastraUsuario extends HttpServlet {
             usuario.setSenha(new Encriptador().encripta(request.getParameter("senha")));
             
             Invocation call = wt.request().buildPost(Entity.xml(usuario));
-            Response resposta = call.invoke();
+            call.invoke();
             
             session.setAttribute("usuario", usuario);
             
-            response.sendRedirect("https://verde-esperanca.herokuapp.com");
+            response.sendRedirect("https://fagulha-esperanca.herokuapp.com");
         } catch (URISyntaxException ex) {
             Logger.getLogger(CadastraUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }

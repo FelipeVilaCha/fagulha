@@ -9,11 +9,15 @@
  </filter>
  <filter-mapping>
   <filter-name>LoginFilter</filter-name>
-  <url-pattern>/realizaLogin</url-pattern>
+  <url-pattern>/login</url-pattern>
  </filter-mapping>
  <servlet>
   <servlet-name>RealizaLogin</servlet-name>
   <servlet-class>com.uff.fagulha.servlet.RealizaLogin</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>RealizaLogout</servlet-name>
+  <servlet-class>com.uff.fagulha.servlet.RealizaLogout</servlet-class>
  </servlet>
  <servlet>
   <servlet-name>CriaDenuncia</servlet-name>
@@ -52,12 +56,20 @@
   <servlet-class>com.uff.fagulha.servlet.ConsultaDoacoesPorUsuario</servlet-class>
  </servlet>
  <servlet>
-  <servlet-name>RemoveUsuario</servlet-name>
-  <servlet-class>com.uff.fagulha.servlet.RemoveUsuario</servlet-class>
+  <servlet-name>GetInfos</servlet-name>
+  <servlet-class>com.uff.fagulha.servlet.GetInfos</servlet-class>
  </servlet>
+ <servlet-mapping>
+  <servlet-name>GetInfos</servlet-name>
+  <url-pattern>/GetInfos</url-pattern>
+ </servlet-mapping>
  <servlet-mapping>
   <servlet-name>RealizaLogin</servlet-name>
   <url-pattern>/login</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>RealizaLogout</servlet-name>
+  <url-pattern>/logout</url-pattern>
  </servlet-mapping>
  <servlet-mapping>
   <servlet-name>CriaDenuncia</servlet-name>
@@ -95,11 +107,7 @@
   <servlet-name>ConsultaDoacoesPorUsuario</servlet-name>
   <url-pattern>/getDoacoes</url-pattern>
  </servlet-mapping>
- <servlet-mapping>
-  <servlet-name>RemoveUsuario</servlet-name>
-  <url-pattern>/removeUsuario</url-pattern>
- </servlet-mapping>
  <welcome-file-list>
-  <welcome-file>index.html</welcome-file>
+  <welcome-file>index.jsp</welcome-file>
  </welcome-file-list>
 </web-app>

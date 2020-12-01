@@ -44,7 +44,7 @@ public class RealizaLogin extends HttpServlet {
             Client client = ClientBuilder.newClient();
             URI uri;
             
-            String base = "https://api-verde-esperanca.herokuapp.com/resources/usuario/login/" + email ;
+            String base = "https://api-fagulha.herokuapp.com/resources/usuario/login/" + email;
 
             uri = new URI(base);
             wt = client.target(uri);
@@ -60,6 +60,8 @@ public class RealizaLogin extends HttpServlet {
             } else {
             	session.setAttribute("erro", "Login");
             }
+            
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
         } catch (URISyntaxException ex) {
             
         }

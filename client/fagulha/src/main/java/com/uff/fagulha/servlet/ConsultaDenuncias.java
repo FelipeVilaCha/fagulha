@@ -41,7 +41,7 @@ public class ConsultaDenuncias extends HttpServlet {
             HttpSession session = request.getSession();
             URI uri;
             
-            String base = "https://api-verde-esperanca.herokuapp.com/resources/denuncia";
+            String base = "https://api-fagulha.herokuapp.com/resources/denuncia";
 
             uri = new URI(base);
             wt = client.target(uri);
@@ -52,13 +52,6 @@ public class ConsultaDenuncias extends HttpServlet {
             status = resposta.getStatus();
             
             denuncias = resposta.readEntity(new GenericType<List<Denuncia>>(){});
-            
-            // Checando o status das denuncias para visualizacao
-            for(int i = 0; i < denuncias.size(); i++) {
-            	if(denuncias.get(i).getStatus() != 3) {
-            		denuncias.remove(i);
-            	}
-            }
             
             session.setAttribute("denuncias", denuncias);
         } catch (URISyntaxException ex) {

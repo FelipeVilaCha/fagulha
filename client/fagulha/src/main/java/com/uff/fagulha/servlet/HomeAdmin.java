@@ -44,9 +44,9 @@ public class HomeAdmin extends HttpServlet {
             Client client = ClientBuilder.newClient();
             URI uri;
             
-            String baseUsuario = "https://api-verde-esperanca.herokuapp.com/resources/usuario";
-            String baseDenuncia = "https://api-verde-esperanca.herokuapp.com/resources/denuncia";
-            String baseDoacoes = "https://api-verde-esperanca.herokuapp.com/resources/doacoes";
+            String baseUsuario = "https://api-fagulha.herokuapp.com/resources/usuario";
+            String baseDenuncia = "https://api-fagulha.herokuapp.com/resources/denuncia";
+            String baseDoacoes = "https://api-fagulha.herokuapp.com/resources/doacoes";
             
             uri = new URI(baseUsuario);
             wt = client.target(uri);
@@ -81,7 +81,7 @@ public class HomeAdmin extends HttpServlet {
             session.setAttribute("denuncias", denuncias);
             session.setAttribute("doacoes", doacoes);
                 
-            request.getRequestDispatcher("/admin.jsp").forward(request, response);
+            response.sendRedirect("/http://localhost:8080/admin.jsp");
         } catch (URISyntaxException ex) {
             Logger.getLogger(HomeAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }

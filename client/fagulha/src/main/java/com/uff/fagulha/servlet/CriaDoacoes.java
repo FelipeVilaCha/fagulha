@@ -41,13 +41,13 @@ public class CriaDoacoes extends HttpServlet {
             HttpSession session = request.getSession();
             URI uri;
             
-            String base = "https://api-verde-esperanca.herokuapp.com/resources/doacoes";
+            String base = "https://api-fagulha.herokuapp.com/resources/doacoes";
 
             uri = new URI(base);
             wt = client.target(uri);
             wt.request().accept("application/xml");
             
-            Usuario usuario = new Usuario(Integer.parseInt(request.getParameter("id_usuario")));
+            Usuario usuario = ((Usuario) session.getAttribute("usuario"));
             
             doacao = new Doacoes(Integer.parseInt(request.getParameter("valor")), new Date(), request.getParameter("estado"), usuario);
 

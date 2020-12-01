@@ -39,7 +39,7 @@ public class ConsultaUsuario extends HttpServlet {
             Client client = ClientBuilder.newClient();
             URI uri;
             
-            String base = "https://api-verde-esperanca.herokuapp.com/resources/usuario/" + Integer.parseInt(request.getParameter("id_usuario"));
+            String base = "https://api-fagulha.herokuapp.com/resources/usuario/" + Integer.parseInt(request.getParameter("id_usuario"));
             
             uri = new URI(base);
             wt = client.target(uri);

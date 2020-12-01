@@ -40,7 +40,7 @@ public class AtualizaDenuncia extends HttpServlet {
             Client client = ClientBuilder.newClient();
             URI uri;
             
-            String base = "https://api-verde-esperanca.herokuapp.com/resources/denuncia/" + + Integer.parseInt(request.getParameter("id_denuncia"));;
+            String base = "https://api-fagulha.herokuapp.com/resources/denuncia/" + + Integer.parseInt(request.getParameter("id_denuncia"));;
 
             uri = new URI(base);
             wt = client.target(uri);

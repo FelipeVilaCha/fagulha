@@ -42,7 +42,7 @@ public class ConsultaDenunciasPorUsuario extends HttpServlet {
             HttpSession session = request.getSession();
             URI uri;
             
-            String base = "https://api-verde-esperanca.herokuapp.com/resources/denuncia/usuario/" + ((Usuario) session.getAttribute("usuario")).getId();
+            String base = "https://api-fagulha.herokuapp.com/resources/denuncia/usuario/" + ((Usuario) session.getAttribute("usuario")).getId();
 
             uri = new URI(base);
             wt = client.target(uri);
