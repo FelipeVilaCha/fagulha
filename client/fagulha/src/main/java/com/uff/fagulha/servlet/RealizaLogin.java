@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
@@ -27,10 +28,9 @@ public class RealizaLogin extends HttpServlet {
     
 	private static final long serialVersionUID = 1L;
 	WebTarget wt;
-    Usuario usuario;
     
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         HttpSession session = request.getSession();
@@ -44,21 +44,23 @@ public class RealizaLogin extends HttpServlet {
             Client client = ClientBuilder.newClient();
             URI uri;
             
-            String base = "https://api-fagulha.herokuapp.com/resources/usuario/login/" + email;
+            String base = "https://api-fagulha.herokuapp.com/resources/usuario/login/";
 
             uri = new URI(base);
             wt = client.target(uri);
             wt.request().accept("application/xml");
-
-            Invocation call = wt.request().buildGet();
+            
+            Usuario usuario = new Usuario(email);
+      
+            Invocation call = wt.request().buildPost(Entity.xml(usuario));
             Response resposta = call.invoke();
             
             usuario = resposta.readEntity(new GenericType<Usuario>(){});
             
-            if(usuario.getId().equals(0) || !usuario.getSenha().equals(senhaEncriptada)){
+            if(usuario.getSenha().equals(senhaEncriptada)){
             	session.setAttribute("usuario", usuario);
             } else {
-            	session.setAttribute("erro", "Login");
+            	session.setAttribute("erro", "erro");
             }
             
             request.getRequestDispatcher("/index.jsp").forward(request, response);

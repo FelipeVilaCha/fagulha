@@ -16,6 +16,7 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Response;
 
 import com.uff.fagulha.model.Denuncia;
 import com.uff.fagulha.model.Usuario;
@@ -52,7 +53,15 @@ public class CriaDenuncia extends HttpServlet {
             Denuncia denuncia = new Denuncia(request.getParameter("descricao"), usuario, status, request.getParameter("estado"), request.getParameter("cidade"));
             
             Invocation call = wt.request().buildPost(Entity.xml(denuncia));
-            call.invoke();
+            Response res = call.invoke();
+            
+            int retornoStatus = res.getStatus();
+            
+            if(res.getStatus() == 200 || res.getStatus() == 204) {
+            	session.setAttribute("status", retornoStatus);
+            } else {
+            	session.setAttribute("status", null);
+            }
             
             request.getRequestDispatcher("/denuncia.jsp").forward(request, response);
         } catch (URISyntaxException ex) {

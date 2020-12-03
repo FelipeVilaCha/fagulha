@@ -61,7 +61,7 @@
         <ul>
           <li class="active"><a href="#header">Home</a></li>
           <li><a href="#about">Sobre</a></li>
-          <li><a href="info.jsp">Informações</a></li>
+          <li><a href="infos.jsp">Informações</a></li>
           <li><a href="denuncia.jsp">Denúncias</a></li>
         </ul>
       </nav>
@@ -103,7 +103,7 @@
           <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
 
             <!--Body-->
-            <form action="login" method="get">
+            <form action="login" method="post">
 	            <div class="modal-body mx-2">
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-email"></i>
@@ -213,6 +213,11 @@
   <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
       <div class="row">
+      <% if((Usuario) session.getAttribute("erro") == null) { 
+    	  	out.println("<div class=\"alert alert-danger\" role=\"alert\">");
+			out.println("Usuário ou senha incorretos, tente novamente!");
+			out.println("</div>");
+      	} %>
         <div class="col-xl-6">
           <h1>Fagulha</h1>
           <h2>

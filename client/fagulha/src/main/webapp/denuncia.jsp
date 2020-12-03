@@ -3,6 +3,7 @@
 <%@page import="com.uff.fagulha.model.Denuncia"%>
 <%@page import="com.uff.fagulha.model.Usuario"%>
 <%@page import="java.util.List"%>
+<%@page import="java.util.concurrent.TimeUnit"%>
 <html lang="pt-br">
 
 <head>
@@ -56,7 +57,7 @@
                 <ul>
                     <li><a href="index.jsp#header">Home</a></li>
                     <li><a href="index.jsp#about">Sobre</a></li>
-                    <li><a href="info.jsp">Informações</a></li>
+                    <li><a href="infos.jsp">Informações</a></li>
                     <li class="active"><a href="denuncia.jsp">Denúncias</a></li>
                 </ul>
             </nav>
@@ -66,7 +67,8 @@
             } else { 
                 out.println("<a href=\"perfil.jsp\" class=\"get-started-btn scrollto\">" + ((Usuario) session.getAttribute("usuario")).getNome() + " </a>");
                 out.println("<a href=\"/logout\">  (sair) </a>");
-           	} %>
+           	}
+           	%>
         </div>
     </header>
     <!-- End Header -->
@@ -98,7 +100,7 @@
           <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
 
             <!--Body-->
-            <form action="login" method="get">
+            <form action="login" method="post">
 	            <div class="modal-body mx-2">
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-email"></i>
@@ -180,11 +182,6 @@
 	                <label data-error="wrong" data-success="right" for="defaultForm-pass">Senha</label>
 	                <input type="password" id="defaultForm-pass" name="senha" class="form-control validate">
 	              </div>
-	
-	              <div class="options mt-1">
-	                <p class="mb-0">Já tem uma conta? <a href="#panel7" class="blue-text">Clique aqui</a></p>
-	              </div>
-	    
 	            </div>
             <!--Footer-->
             <div class="modal-footer">
@@ -206,6 +203,17 @@
 
     <main id="main">
         <section id="faq" class="faq mt-5">
+        	<%  if ((Integer) session.getAttribute("status") == null) {
+        			out.println("<div class=\"alert alert-danger\" role=\"alert\">");
+        			out.println("Não foi possível completar sua denúncia, tente novamente!");
+        			out.println("</div>");
+        		} else if ((Integer) session.getAttribute("status") != null) {
+        			out.println("<div class=\"alert alert-success\" role=\"alert\">");
+        			out.println("Denúncia registrada com sucesso. Entraremos em contato!");
+        			out.println("</div>");
+        		}
+        	%>
+        	
             <div class="container aos-init aos-animate" data-aos="fade-up">
 
                 <div class="section-title">
@@ -286,7 +294,6 @@
                             </div>
                             <div class="mb-3">
                                 <div class="loading">Carregando</div>
-                                <div class="sent-message">Sua denúncia foi feita. Obrigado e fique de olho!</div>
                             </div>
                             <div class="text-center">
                             	<% if((Usuario) session.getAttribute("usuario") != null) { 

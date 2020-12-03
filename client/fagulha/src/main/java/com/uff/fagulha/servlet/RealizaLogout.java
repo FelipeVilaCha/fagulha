@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.ws.rs.client.WebTarget;
 
 import com.uff.fagulha.model.Usuario;
 
@@ -19,8 +18,6 @@ import com.uff.fagulha.model.Usuario;
 public class RealizaLogout extends HttpServlet {
     
 	private static final long serialVersionUID = 1L;
-	WebTarget wt;
-    Usuario usuario;
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -31,7 +28,7 @@ public class RealizaLogout extends HttpServlet {
     	Usuario usuario = (Usuario) session.getAttribute("usuario");
     	   	
     	for(Cookie c : request.getCookies()) {
-    		if (c.getValue() == usuario.getEmail()) {
+    		if (c.getValue().equals(usuario.getEmail())) {
     	   		c.setMaxAge(0);
     	   	}
     	}
