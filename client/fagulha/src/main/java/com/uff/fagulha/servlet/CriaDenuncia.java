@@ -55,12 +55,10 @@ public class CriaDenuncia extends HttpServlet {
             Invocation call = wt.request().buildPost(Entity.xml(denuncia));
             Response res = call.invoke();
             
-            int retornoStatus = res.getStatus();
-            
             if(res.getStatus() == 200 || res.getStatus() == 204) {
-            	session.setAttribute("status", retornoStatus);
+            	session.removeAttribute("mensagemDenuncia");
             } else {
-            	session.setAttribute("status", null);
+            	session.setAttribute("mensagemDenuncia", "erro");
             }
             
             request.getRequestDispatcher("/denuncia.jsp").forward(request, response);

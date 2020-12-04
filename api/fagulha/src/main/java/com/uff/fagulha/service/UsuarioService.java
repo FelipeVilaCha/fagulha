@@ -71,11 +71,11 @@ public class UsuarioService {
         }
     }
     
-    @GET
-    @Path("login/{email}")
+    @POST
+    @Path("login")
     @Consumes(MediaType.APPLICATION_XML)
     @Produces(MediaType.APPLICATION_XML)
-    public Usuario getLogin(@PathParam("email") String email) {
-        return new UsuarioDAO().getUsuarioByEmail(email);
+    public Usuario getLogin(Usuario usuario) {
+        return new UsuarioDAO().getUsuarioByEmail(usuario.getEmail());
     }
 }

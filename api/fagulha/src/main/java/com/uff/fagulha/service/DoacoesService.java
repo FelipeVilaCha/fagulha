@@ -50,8 +50,8 @@ public class DoacoesService {
     @Consumes(MediaType.APPLICATION_XML)
     public void cria(Doacoes doacao) {
         try {
-        	new EnviaEmail().envia(doacao.getUsuario().getEmail(), "criacao", doacao);
             new DoacoesDAO().insereDoacoes(doacao);
+            new EnviaEmail().envia(doacao.getUsuario().getEmail(), "criacao", doacao);
         } catch(Exception ex) {
             
         } 

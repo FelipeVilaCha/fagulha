@@ -65,11 +65,15 @@
             <!-- .nav-menu -->
 
             <% if((Usuario) session.getAttribute("usuario") == null) {
-      		 out.println("<a href=\"#modalLRForm\" class=\"get-started-btn scrollto\" data-toggle=\"modal\" data-target=\"#modalLRForm\">Login</a>"); 
-      	 } else {
-        	 out.println("<a href=\"perfil.jsp\" class=\"get-started-btn scrollto\">" + ((Usuario) session.getAttribute("usuario")).getNome() + " </a>");
-        	 out.println("<a href=\"/logout\">  (sair) </a>");
-      	} %>
+      		 	out.println("<a href=\"#modalLRForm\" class=\"get-started-btn scrollto\" data-toggle=\"modal\" data-target=\"#modalLRForm\">Login</a>"); 
+      	 	} else {
+      			out.println("<div class=\"dropdown\">");
+            	out.println("<a href=\"#\" class=\"get-started-btn scrollto\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" style=\"border-radius: 50%; padding: 8px 12px;\"><i class=\"icofont-ui-user\"></i></a>");
+           		out.println("<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">");
+          		out.println("<a class=\"dropdown-item\" href=\"perfil.jsp\">Perfil</a>");
+          		out.println("<a class=\"dropdown-item\" href=\"/logout\">Sair</a>");
+        		out.println("</div></div>");
+      		} %>
         </div>
     </header>
     <!-- End Header -->
@@ -125,7 +129,6 @@
                                     <div class="options mt-1">
                                         <p class="mb-0">Não é um membro? <a href="#" class="blue-text">Registrar-se</a>
                                         </p>
-                                        <p class="mb-0">Esqueceu <a href="#" class="blue-text">a senha?</a></p>
                                     </div>
                                 </div>
                                 <!--Footer-->
@@ -158,7 +161,7 @@
                                         <i class="icofont-ui-number"></i>
                                         <label data-error="wrong" data-success="right" for="defaultForm-text">Data de
                                             Nascimento</label>
-                                        <input type="date" id="defaultForm-text" name="dataNasc"
+                                        <input type="date" id="defaultForm-text" name="dataNascimento"
                                             class="form-control validate">
                                     </div>
 
@@ -220,7 +223,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-success waves-effect ml-auto"
                                         data-dismiss="modal">Fechar</button>
-                                    <button type="submit" class="btn btn-success">Entrar<i
+                                    <button type="submit" class="btn btn-success">Finalizar<i
                                             class="fas fa-sign-in ml-1"></i></button>
                                 </div>
                             </form>

@@ -80,8 +80,6 @@ public class HomeAdmin extends HttpServlet {
             session.setAttribute("usuarios", usuarios);
             session.setAttribute("denuncias", denuncias);
             session.setAttribute("doacoes", doacoes);
-                
-            response.sendRedirect("/http://localhost:8080/admin.jsp");
         } catch (URISyntaxException ex) {
             Logger.getLogger(HomeAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }

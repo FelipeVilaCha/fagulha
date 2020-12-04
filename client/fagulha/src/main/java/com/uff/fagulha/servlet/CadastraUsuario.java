@@ -3,8 +3,6 @@ package com.uff.fagulha.servlet;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,6 +19,7 @@ import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 
 import com.uff.fagulha.model.Usuario;
+import com.uff.fagulha.util.ConversorData;
 import com.uff.fagulha.util.Encriptador;
 
 /**
@@ -50,15 +49,8 @@ public class CadastraUsuario extends HttpServlet {
             
             Usuario usuario = new Usuario();
             
-            SimpleDateFormat f = new SimpleDateFormat("dd-MMM-yyyy");
-            Date dataNasc = new Date();
-            try {
-                dataNasc = f.parse(request.getParameter("dataNasc"));
-            } catch (ParseException e) {
-            	Logger.getLogger(CadastraUsuario.class.getName()).log(Level.SEVERE, null, e);
-            }
-            
-            usuario.setDataNasc(dataNasc);
+            Date date = new ConversorData().transformTraco(request.getParameter("dataNascimento"));
+            usuario.setDataNasc(date);
             usuario.setCidade(request.getParameter("cidade"));
             usuario.setCpf(request.getParameter("cpf"));
             usuario.setEmail(request.getParameter("email"));

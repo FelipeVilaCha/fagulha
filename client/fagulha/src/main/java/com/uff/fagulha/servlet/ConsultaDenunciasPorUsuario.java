@@ -31,7 +31,6 @@ public class ConsultaDenunciasPorUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	WebTarget wt;
     Integer status;
-    List<Denuncia> denuncias = null;
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -52,7 +51,7 @@ public class ConsultaDenunciasPorUsuario extends HttpServlet {
             Response resposta = call.invoke();
             status = resposta.getStatus();
             
-            denuncias = resposta.readEntity(new GenericType<List<Denuncia>>(){});
+            List<Denuncia> denuncias = resposta.readEntity(new GenericType<List<Denuncia>>(){});
             
             session.setAttribute("denuncias", denuncias);
         } catch (URISyntaxException ex) {

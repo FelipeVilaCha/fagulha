@@ -57,10 +57,11 @@ public class RealizaLogin extends HttpServlet {
             
             usuario = resposta.readEntity(new GenericType<Usuario>(){});
             
-            if(usuario.getSenha().equals(senhaEncriptada)){
+            if(usuario.getId() != 0 && usuario.getSenha().equals(senhaEncriptada)){
             	session.setAttribute("usuario", usuario);
+            	session.removeAttribute("mensagemIndex");
             } else {
-            	session.setAttribute("erro", "erro");
+            	session.setAttribute("mensagemIndex", "erro");
             }
             
             request.getRequestDispatcher("/index.jsp").forward(request, response);

@@ -39,14 +39,15 @@ public class AtualizaDenuncia extends HttpServlet {
         try {
             Client client = ClientBuilder.newClient();
             URI uri;
+            HttpSession session = request.getSession();
             
-            String base = "https://api-fagulha.herokuapp.com/resources/denuncia/" + + Integer.parseInt(request.getParameter("id_denuncia"));;
+            String base = "https://api-fagulha.herokuapp.com/resources/denuncia/" + Integer.parseInt(request.getParameter("id_denuncia"));
 
             uri = new URI(base);
             wt = client.target(uri);
             wt.request().accept("application/xml");
             
-            Usuario usuario = new Usuario(Integer.parseInt(request.getParameter("id_usuario")));
+            Usuario usuario = (Usuario) session.getAttribute("usuario");
             
             denuncia = new Denuncia(request.getParameter("descricao"), usuario, Integer.parseInt(request.getParameter("status")), request.getParameter("estado"), request.getParameter("cidade"));
             
@@ -54,14 +55,13 @@ public class AtualizaDenuncia extends HttpServlet {
             Response resposta = call.invoke();
             status = resposta.getStatus();
             
-            HttpSession session = request.getSession();
-            
-            if(status == 204) {
-                request.getRequestDispatcher("/adminHome.jsp").forward(request, response);
+            if (status != 200 || status != 204) {
+            	session.setAttribute("mensagem", "erro");
             } else {
-            	session.setAttribute("erro", true);
-                request.getRequestDispatcher("/adminHome.jsp").forward(request, response);
-            }      
+            	session.setAttribute("mensagem", "sucesso");
+            }
+            
+            request.getRequestDispatcher("/admin.jsp").forward(request, response);
         } catch (URISyntaxException ex) {
             Logger.getLogger(AtualizaDenuncia.class.getName()).log(Level.SEVERE, null, ex);
         }

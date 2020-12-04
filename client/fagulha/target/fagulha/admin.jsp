@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="java.io.PrintWriter"%>
-<%@page import="org.json.simple.JSONObject"%>
 <%@page import="com.uff.fagulha.model.FocusAPI"%>
 <%@page import="java.util.List"%>
 <!DOCTYPE html>
@@ -11,12 +10,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="/GetInfos"/>
 	
 	<% if((String) session.getAttribute("api") != null) {
 			out.println(((String) session.getAttribute("api")));
 	}%>
-	
+	<jsp:include page="/homeAdmin"/>
 	
 	<form action="cadastraUsuario" method="post">
 	            <div class="body mx-2">

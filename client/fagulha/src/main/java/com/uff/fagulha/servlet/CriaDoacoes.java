@@ -21,6 +21,7 @@ import javax.ws.rs.core.Response;
 
 import com.uff.fagulha.model.Doacoes;
 import com.uff.fagulha.model.Usuario;
+import com.uff.fagulha.util.ConversorData;
 
 /**
  *
@@ -49,20 +50,22 @@ public class CriaDoacoes extends HttpServlet {
             
             Usuario usuario = ((Usuario) session.getAttribute("usuario"));
             
-            doacao = new Doacoes(Integer.parseInt(request.getParameter("valor")), new Date(), request.getParameter("estado"), usuario);
+            Date date = new ConversorData().transformBarra(new Date());
+
+            doacao = new Doacoes(Integer.parseInt(request.getParameter("valor")), date, request.getParameter("estado"), usuario);
 
             Invocation call = wt.request().buildPost(Entity.xml(doacao));
             Response resposta = call.invoke();
             
-            if(resposta.getStatus() != 204) {
-            	session.setAttribute("status", false);
+            if(resposta.getStatus() == 204 || resposta.getStatus() == 200) {
+            	session.removeAttribute("mensagemDenuncia");
             } else {
-            	session.setAttribute("status", true);
+            	session.setAttribute("mensagemDenuncia", "erro");
             }
             
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            request.getRequestDispatcher("/infos.jsp").forward(request, response);
         } catch (URISyntaxException ex) {
-            Logger.getLogger(CriaDenuncia.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CriaDoacoes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

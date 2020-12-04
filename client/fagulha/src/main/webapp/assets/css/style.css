@@ -1411,6 +1411,10 @@ section {
   background: #287a4b;
 }
 
+.denuncia-table th{
+  color: #6cc091;
+}
+
 @-webkit-keyframes animate-loading {
   0% {
     transform: rotate(0deg);
@@ -2203,3 +2207,35 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+.form-group label {
+  display: block;
+  position: relative;
+  color: #6cc091;
+  transition: 0.3s;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 5px;
+}
+
+.dropdown-item {
+  color: #6cc091;
+}
+
+.dropdown-item:hover {
+  color: #6cc091;
+}
+
+.avatar-pic {
+  width: 80px;
+  }
+
+  .image-upload>input {
+    display: none;
+  }
+
+  .image-upload img {
+    width: 100px;
+    cursor: pointer;
+  }

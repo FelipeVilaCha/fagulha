@@ -65,10 +65,13 @@
             <% if((Usuario) session.getAttribute("usuario") == null) {
                 out.println("<a href=\"#\" class=\"get-started-btn scrollto\" data-toggle=\"modal\" data-target=\"#modalLRForm\">Login</a>");
             } else { 
-                out.println("<a href=\"perfil.jsp\" class=\"get-started-btn scrollto\">" + ((Usuario) session.getAttribute("usuario")).getNome() + " </a>");
-                out.println("<a href=\"/logout\">  (sair) </a>");
-           	}
-           	%>
+            	out.println("<div class=\"dropdown\">");
+                out.println("<a href=\"#\" class=\"get-started-btn scrollto\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" style=\"border-radius: 50%; padding: 8px 12px;\"><i class=\"icofont-ui-user\"></i></a>");
+               	out.println("<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">");
+              	out.println("<a class=\"dropdown-item\" href=\"perfil.jsp\">Perfil</a>");
+              	out.println("<a class=\"dropdown-item\" href=\"/logout\">Sair</a>");
+            	out.println("</div></div>");
+           	}%>
         </div>
     </header>
     <!-- End Header -->
@@ -116,7 +119,6 @@
 	
 	              <div class="options mt-1">
 	                <p class="mb-0">Não é um membro? <a href="#" class="blue-text">Registrar-se</a></p>
-	                <p class="mb-0">Esqueceu <a href="#" class="blue-text">a senha?</a></p>
 	              </div>
 	            </div>
 	            <!--Footer-->
@@ -144,7 +146,7 @@
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-number"></i>
 	                <label data-error="wrong" data-success="right" for="defaultForm-text">Data de Nascimento</label>
-	                <input type="date" id="defaultForm-text" name="dataNasc" class="form-control validate">
+	                <input type="date" id="defaultForm-text" name="dataNascimento" class="form-control validate">
 	              </div>
 	              
 	              <div class="md-form mb-2">
@@ -186,7 +188,7 @@
             <!--Footer-->
             <div class="modal-footer">
               <button type="button" class="btn btn-outline-success waves-effect ml-auto" data-dismiss="modal">Fechar</button>
-              <button type="submit" class="btn btn-success">Entrar<i class="fas fa-sign-in ml-1"></i></button>
+              <button type="submit" class="btn btn-success">Finalizar<i class="fas fa-sign-in ml-1"></i></button>
             </div>
           </form>
           </div>
@@ -203,11 +205,11 @@
 
     <main id="main">
         <section id="faq" class="faq mt-5">
-        	<%  if ((Integer) session.getAttribute("status") == null) {
+        	<%  if ((String) session.getAttribute("mensagemDenuncia") == "erro") {
         			out.println("<div class=\"alert alert-danger\" role=\"alert\">");
         			out.println("Não foi possível completar sua denúncia, tente novamente!");
         			out.println("</div>");
-        		} else if ((Integer) session.getAttribute("status") != null) {
+        		} else if ((String) session.getAttribute("mensagemDenuncia") == "sucesso") {
         			out.println("<div class=\"alert alert-success\" role=\"alert\">");
         			out.println("Denúncia registrada com sucesso. Entraremos em contato!");
         			out.println("</div>");

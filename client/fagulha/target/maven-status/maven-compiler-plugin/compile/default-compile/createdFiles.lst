@@ -1,13 +1,11 @@
 com\uff\fagulha\model\Doacoes.class
 com\uff\fagulha\servlet\ConsultaDoacoesPorUsuario.class
 com\uff\fagulha\model\FocusAPI.class
-com\uff\fagulha\servlet\ConsultaUsuario$1.class
 com\uff\fagulha\servlet\HomeAdmin$2.class
 com\uff\fagulha\servlet\EditaUsuario.class
 com\uff\fagulha\servlet\ConsultaDenunciasPorUsuario.class
 com\uff\fagulha\servlet\RealizaLogout.class
 com\uff\fagulha\servlet\CriaDenuncia.class
-com\uff\fagulha\servlet\GetInfos$1.class
 com\uff\fagulha\servlet\ConsultaDoacoes$1.class
 com\uff\fagulha\servlet\ConsultaDoacoes.class
 com\uff\fagulha\util\Encriptador.class
@@ -20,11 +18,9 @@ com\uff\fagulha\servlet\CadastraUsuario.class
 com\uff\fagulha\servlet\HomeAdmin$1.class
 com\uff\fagulha\servlet\RealizaLogin.class
 com\uff\fagulha\model\Denuncia.class
-com\uff\fagulha\servlet\ConsultaUsuario.class
 com\uff\fagulha\servlet\ConsultaDenuncias$1.class
 com\uff\fagulha\servlet\RealizaLogin$1.class
 com\uff\fagulha\servlet\CriaDoacoes.class
 com\uff\fagulha\servlet\HomeAdmin$3.class
 com\uff\fagulha\servlet\HomeAdmin.class
 com\uff\fagulha\servlet\ConsultaDoacoesPorUsuario$1.class
-com\uff\fagulha\servlet\GetInfos.class
