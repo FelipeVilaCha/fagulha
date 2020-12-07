@@ -56,7 +56,7 @@
     <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center">
         <h1 class="logo mr-auto">
-          <a href="index.jsp">Fagulha</a>
+          <a href="/admin/index.jsp">Fagulha</a>
         </h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo mr-auto"><img src="../assets/img/logo.png" alt=""></a>-->
@@ -65,7 +65,7 @@
           <ul>
             <li><a href="/admin/usuario.jsp">Usuários</a></li>
             <li class="active"><a href="/admin/doacoes.jsp">Doações</a></li>
-            <li><a href="denuncia.jsp">Denúncias</a></li>
+            <li><a href="/admin/denuncia.jsp">Denúncias</a></li>
           </ul>
         </nav>
         <!-- .nav-menu -->

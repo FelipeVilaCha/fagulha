@@ -390,7 +390,7 @@
                 <div class="tab-content">
                     <div class="tab-pane active show" id="tab-1">
                         <div class="row">
-                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0" data-aos-delay="100">
+                            <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0" data-aos-delay="100">
                                 <p>
                                     A Amazonia possui condicoes climaticas que fazem dela uma
                                     floresta umida e de altas temperaturas durante o ano todo,
@@ -418,7 +418,7 @@
                     </div>
                     <div class="tab-pane" id="tab-2">
                         <div class="row">
-                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
                                 <p>
                                     O professor Thiago Izzo, pos-doutor em Biologia,
                                     especialista em Ecologia Evolutiva e professor da
@@ -461,7 +461,7 @@
                     </div>
                     <div class="tab-pane" id="tab-3">
                         <div class="row">
-                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
                                 <p>
                                     Grandes biomas do Brasil estao em chamas e as imagens que
                                     chegam a todo o momento sao preocupantes. Saiba como agir
@@ -485,21 +485,21 @@
                     </div>
                     <div class="tab-pane" id="tab-4">
                         <div class="row">
-                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
                                 <p>
                                     A resposta ao fogo pode ser abrupta. "Em anos de seca, a mortalidade pode chegar a 
-                                    90% das árvores, principalmente na borda da floresta amazonica", diz um estudo científico 
+                                    90% das arvores, principalmente na borda da floresta amazonica", diz um estudo cientifico 
                                     publicado recentemente, mencionando os impactos das queimadas.
-									Com a alta mortalidade, a paisagem muda drasticamente e nessas condições, 
-									o fogo pode varrer do mapa a floresta densa que já ocupou a área atingida.
-									As queimadas podem deixar a floresta tão degradada que ela já não tem mais cara de floresta. 
-									A invasão de gramíneas e a perda da diversidade das espécies não permitem que a floresta volte 
-									a ser densa – o que são impactos irreversíveis nesse cenário de temperatura subindo e estação de seca 
+									Com a alta mortalidade, a paisagem muda drasticamente e nessas condiçoes, 
+									o fogo pode varrer do mapa a floresta densa que ja ocupou a area atingida.
+									As queimadas podem deixar a floresta tao degradada que ela ja nao tem mais cara de floresta. 
+									A invasao de gramineas e a perda da diversidade das especies nao permitem que a floresta volte 
+									a ser densa – o que sao impactos irreversiveis nesse cenario de temperatura subindo e estaçao de seca 
 									mais prolongada.
                                 </p>
                                 <p>
                                     <a
-                                        href="https://www.dw.com/pt-br/queimadas-na-amaz%C3%B4nia-podem-causar-danos-irrevers%C3%ADveis/a-50161460">Fonte da informação</a>
+                                        href="https://www.dw.com/pt-br/queimadas-na-amaz%C3%B4nia-podem-causar-danos-irrevers%C3%ADveis/a-50161460">Fonte da informaçao</a>
                                 </p>
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 text-center">

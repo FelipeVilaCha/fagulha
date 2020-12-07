@@ -357,7 +357,7 @@
 															out.println("<td>" + d.getCidade() + "</td>");
 															out.println("<td>" + d.getEstado() + "</td>");
 															out.println("<td><p>" + d.getDescricao() + "</p></td>");
-															out.println("<td class=\"font-weight-bold\">" + d.getStatus() + "</td>");
+															out.println("<td class=\"font-weight-bold\">" + new Conversor().getStatus(d.getStatus()) + "</td>");
 															out.println("</tr>");
 														}
                                             	}%>

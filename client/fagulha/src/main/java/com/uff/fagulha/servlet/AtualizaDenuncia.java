@@ -19,7 +19,6 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
 
 import com.uff.fagulha.model.Denuncia;
-import com.uff.fagulha.model.Usuario;
 
 /**
  *
@@ -47,9 +46,7 @@ public class AtualizaDenuncia extends HttpServlet {
             wt = client.target(uri);
             wt.request().accept("application/xml");
             
-            Usuario usuario = (Usuario) session.getAttribute("usuario");
-            
-            denuncia = new Denuncia(request.getParameter("descricao"), usuario, Integer.parseInt(request.getParameter("status")), request.getParameter("estado"), request.getParameter("cidade"));
+            denuncia = new Denuncia(Integer.parseInt(request.getParameter("id_denuncia")), Integer.parseInt(request.getParameter("status")));
             
             Invocation call = wt.request().buildPut(Entity.xml(denuncia));
             Response resposta = call.invoke();
@@ -61,7 +58,7 @@ public class AtualizaDenuncia extends HttpServlet {
             	session.setAttribute("mensagem", "sucesso");
             }
             
-            request.getRequestDispatcher("/admin.jsp").forward(request, response);
+            request.getRequestDispatcher("/admin/denuncia.jsp").forward(request, response);
         } catch (URISyntaxException ex) {
             Logger.getLogger(AtualizaDenuncia.class.getName()).log(Level.SEVERE, null, ex);
         }

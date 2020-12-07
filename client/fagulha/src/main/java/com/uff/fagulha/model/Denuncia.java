@@ -34,11 +34,9 @@ public class Denuncia implements Serializable {
         this.id = idDenuncia;
     }
 
-    public Denuncia(String descricao, Usuario usuario, String estado, String cidade) {
-        this.descricao = descricao;
-        this.usuario = usuario;
-        this.estado = estado;
-        this.cidade = cidade;
+    public Denuncia(int id, int status) {
+        this.id = id;
+        this.status = status;
     }
     
     public Denuncia(String descricao, Usuario usuario, int status, String estado, String cidade) {

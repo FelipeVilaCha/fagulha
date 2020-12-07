@@ -55,14 +55,17 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center">
+        <h1 class="logo mr-auto">
+          <a href="/admin/index.jsp">Fagulha</a>
+        </h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo mr-auto"><img src="../assets/img/logo.png" alt=""></a>-->
 
         <nav class="nav-menu d-none d-lg-block">
           <ul>
             <li><a href="/admin/usuario.jsp">Usuários</a></li>
-            <li><a href="/admin/doacoes.jsp">Doações</a></li>
-            <li class="active"><a href="/admin/denuncia.jsp">Denúncias</a></li>
+            <li class="active"><a href="/admin/doacoes.jsp">Doações</a></li>
+            <li><a href="/admin/denuncia.jsp">Denúncias</a></li>
           </ul>
         </nav>
         <!-- .nav-menu -->
@@ -91,29 +94,25 @@
                 <th scope="col">Descrição</th>
                 <th scope="col">Status</th>
                 <th scope="col">Atualizar</th>
-                <th scope="col">Salvar</th>
+                <th scope="col"></th>
                 <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
             	<% if((List<Denuncia>) session.getAttribute("denuncias") != null) {
-						int index = 0;
                     	for(Denuncia d : (List<Denuncia>) session.getAttribute("denuncias")) {
-                    		index += 1;
                     		out.println("<form action=\"/atualizaDenuncia\" method=\"post\">");
                     		out.println("<tr>");
-                    		out.println("<th scope=\"row\">" + index + "</th>");
+                    		out.println("<th scope=\"row\"><input type=\"hidden\" name=\"id_denuncia\" value=" + d.getId() + ">" + d.getId() +"</th>");
                         	out.println("<td>" + d.getCidade() + "," + d.getEstado() + "</td>");
                         	out.println("<td><p>" + d.getDescricao() + "</p></td>");
                         	out.println("<td class=\"font-weight-bold\">" + new Conversor().getStatus(d.getStatus()) + "</td>");
                         	out.println("<td class=\"font-weight-bold\">");
-                        	out.println("<select style=\"border-radius: 4px; padding: 0.35rem\" class=\"custom-select\" id=\"inputGroupSelect01\">");
+                        	out.println("<select name=\"status\" style=\"border-radius: 4px; padding: 0.35rem\" class=\"custom-select\" id=\"inputGroupSelect01\">");
                         	out.println("<option selected>Status</option><option value=\"1\">Em análise</option><option value=\"2\">Encaminhada</option><option value=\"3\">Rejeitada</option>");
                         	out.println("</select></td>");
-                        	out.println("<input type=\"hidden\" name=\"cidade\" value=" + d.getCidade());
-                        	out.println("<input type=\"hidden\" name=\"estado\" value=" + d.getEstado());
-                        	out.println("<input type=\"hidden\" name=\"descricao\" value=" + d.getDescricao());
                         	out.println("<td><button type=\"submit\" class=\"btn get-started-btn\">Salvar</button></td>");
+                        	out.println("</form>");
                         	out.println("</tr>");
                 	}
                 }%>
