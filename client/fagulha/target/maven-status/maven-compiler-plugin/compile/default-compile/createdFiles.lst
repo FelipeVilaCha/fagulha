@@ -1,6 +1,5 @@
 com\uff\fagulha\model\Doacoes.class
 com\uff\fagulha\servlet\ConsultaDoacoesPorUsuario.class
-com\uff\fagulha\model\FocusAPI.class
 com\uff\fagulha\servlet\HomeAdmin$2.class
 com\uff\fagulha\servlet\EditaUsuario.class
 com\uff\fagulha\servlet\ConsultaDenunciasPorUsuario.class

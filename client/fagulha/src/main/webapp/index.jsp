@@ -216,11 +216,15 @@
   <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
       <div class="row">
-      <% if((String) session.getAttribute("mensagemIndex") != null) { 
+      <% if((String) session.getAttribute("mensagemIndex") != null && (String) session.getAttribute("mensagemIndex") == "erro") { 
     	  	out.println("<div class=\"alert alert-danger\" role=\"alert\">");
 			out.println("Usuário ou senha incorretos, tente novamente!");
 			out.println("</div>");
-      	} %>
+      	} else if((String) session.getAttribute("mensagemIndex") != null && (String) session.getAttribute("mensagemIndex") == "sucesso") { 
+    	  	out.println("<div class=\"alert alert-success\" role=\"alert\">");
+			out.println("Cadastro realizado com sucesso! Bem-vindo!");
+			out.println("</div>");
+      	}%>
         <div class="col-xl-6">
           <h1>Fagulha</h1>
           <h2>

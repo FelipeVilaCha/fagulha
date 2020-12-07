@@ -34,12 +34,13 @@ public class ConsultaUsuario extends HttpServlet {
         
         WebTarget wt;
         Usuario usuario;
+        HttpSession session = request.getSession();
         
         try {
             Client client = ClientBuilder.newClient();
             URI uri;
-            
-            String base = "https://api-fagulha.herokuapp.com/resources/usuario/" + Integer.parseInt(request.getParameter("id_usuario"));
+            usuario = (Usuario) session.getAttribute("usuario");
+            String base = "https://api-fagulha.herokuapp.com/resources/usuario/" + usuario.getId();
             
             uri = new URI(base);
             wt = client.target(uri);
@@ -50,12 +51,9 @@ public class ConsultaUsuario extends HttpServlet {
             
             usuario = resposta.readEntity(new GenericType<Usuario>(){});
             
-            HttpSession session = request.getSession();
-            
             session.setAttribute("usuario", usuario);
-            request.getRequestDispatcher("/perfil.jsp").forward(request, response);     
         } catch (URISyntaxException ex) {
-            Logger.getLogger(ConsultaDenuncias.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConsultaUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

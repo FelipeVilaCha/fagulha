@@ -2,6 +2,7 @@
 <%@page import="com.uff.fagulha.model.Usuario"%>
 <%@page import="com.uff.fagulha.model.Doacoes"%>
 <%@page import="com.uff.fagulha.model.Denuncia"%>
+<%@page import="com.uff.fagulha.util.Conversor"%>
 <%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -258,8 +259,9 @@
                                         </div>
                                       <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                                         <div class="text-center text-sm-left mb-2 mb-sm-0">
-                                          <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap font-weight-bold"><%= ((Usuario) session.getAttribute("usuario")).getNome() %></h4>
-                                          <p class="mb-0"><%= ((Usuario) session.getAttribute("usuario")).getEmail() %></p>
+                                          <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap font-weight-bold"><%=((Usuario) session.getAttribute("usuario")).getNome()%></h4>
+                                          <p class="mb-0"><%=new Conversor().getIdade(((Usuario) session.getAttribute("usuario")).getDataNasc())%> anos</p>
+                                          <p class="mb-0"><%=((Usuario) session.getAttribute("usuario")).getEmail()%></p>
                                         </div>
                                       </div>
                                     </div>
@@ -267,13 +269,13 @@
                                 <div class="form-group pr-1">
                                     <label>Nome Completo</label>
                                     <input type="text" class="form-control" name="nome" id="nome"
-                                        placeholder="<%= ((Usuario) session.getAttribute("usuario")).getNome() %>" data-rule="minlen:4">
+                                        placeholder="<%=((Usuario) session.getAttribute("usuario")).getNome()%>" data-rule="minlen:4">
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group pl-1">
                                     <label>E-mail</label>
                                     <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="<%= ((Usuario) session.getAttribute("usuario")).getEmail() %>" data-rule="minlen:4">
+                                        placeholder="<%=((Usuario) session.getAttribute("usuario")).getEmail()%>" data-rule="minlen:4">
                                     <div class="validate"></div>
                                 </div>
                             </div>
@@ -281,13 +283,13 @@
                                 <div class="form-group pr-1">
                                     <label>Data de Nascimento</label>
                                     <input type="text" class="form-control" name="dataNascimento" id="datanascimento"
-                                        placeholder="<%= ((Usuario) session.getAttribute("usuario")).getDataNasc() %>" data-rule="len:8">
+                                        placeholder="<%=new Conversor().getDate(((Usuario) session.getAttribute("usuario")).getDataNasc())%>" data-rule="len:8">
                                     <div class="validate"></div>
                                 </div>
                                 <div class="form-group pl-1">
                                     <label>CPF</label>
                                     <input type="text" class="form-control" name="cpf" id="cpf"
-                                        placeholder="<%= ((Usuario) session.getAttribute("usuario")).getCpf() %>" data-rule="len:11">
+                                        placeholder="<%=((Usuario) session.getAttribute("usuario")).getCpf()%>" data-rule="len:11">
                                     <div class="validate"></div>
                                 </div>
                             </div>
@@ -296,19 +298,19 @@
                                     <div class="form-group">
                                         <label>Cidade</label>
                                         <input type="text" class="form-control" name="cidade" id="cidade"
-                                            placeholder="<%= ((Usuario) session.getAttribute("usuario")).getCidade() %>" data-rule="minlen:4">
+                                            placeholder="<%=((Usuario) session.getAttribute("usuario")).getCidade()%>" data-rule="minlen:4">
                                         <div class="validate"></div>
                                     </div>
                                     <div class="form-group px-2">
                                         <label>Estado</label>
                                         <input type="text" class="form-control" name="estado" id="estado"
-                                            placeholder="<%= ((Usuario) session.getAttribute("usuario")).getEstado() %>" data-rule="minlen:2">
+                                            placeholder="<%=((Usuario) session.getAttribute("usuario")).getEstado()%>" data-rule="minlen:2">
                                         <div class="validate"></div>
                                     </div>
                                     <div class="form-group">
                                         <label>País</label>
                                         <input type="text" class="form-control" name="pais" id="pais"
-                                            placeholder="<%= ((Usuario) session.getAttribute("usuario")).getPais() %>" data-rule="minlen:2">
+                                            placeholder="<%=((Usuario) session.getAttribute("usuario")).getPais()%>" data-rule="minlen:2">
                                         <div class="validate"></div>
                                     </div>
                                 </div>
@@ -316,7 +318,7 @@
                                 <div class="form-group">
                                     <label>Senha</label>
                                     <input type="password" class="form-control" name="senha" id="password"
-                                        placeholder="<%= ((Usuario) session.getAttribute("usuario")).getSenha() %>" data-rule="maxlen:8"
+                                        placeholder="<%=((Usuario) session.getAttribute("usuario")).getSenha()%>" data-rule="maxlen:8"
                                         data-msg="Entre com a sua senha de oito digitos">
                                     <div class="validate"></div>
                                 </div>
@@ -334,31 +336,31 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="info-box">
-                                        <table class="table denuncia-table p-2">
+                                    <div class="info-box p-3">
+                                        <table class="table denuncia-table">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col">Estado</th>
                                                     <th scope="col">Cidade</th>
+                                                    <th scope="col">Estado</th>
                                                     <th scope="col">Descrição</th>
                                                     <th scope="col">Status</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                             	<% if((List<Denuncia>) session.getAttribute("denuncias") != null) {
-                                            			int index = 0;
-                    									for(Denuncia d : (List<Denuncia>) session.getAttribute("denuncias")) {
-                    										index += 1;
-                    										out.println("<tr>");
-                    										out.println("<th scope=\"row\">" + index + "</th>");
-                        									out.println("<td>" + d.getEstado() + "</td>");
-                        									out.println("<td>" + d.getCidade() + "</td>");
-                        									out.println("<td><p>" + d.getDescricao() + "</p></td>");
-                        									out.println("<td class=\"font-weight-bold\">" + d.getStatus() + "</td>");
-                        									out.println("</tr>");
-                        								}
-                									}%>
+                                            	     	int index = 0;
+														for(Denuncia d : (List<Denuncia>) session.getAttribute("denuncias")) {
+                                            	        	index += 1;
+                                            	            out.println("<tr>");
+                                            	            out.println("<th scope=\"row\">" + index + "</th>");
+															out.println("<td>" + d.getCidade() + "</td>");
+															out.println("<td>" + d.getEstado() + "</td>");
+															out.println("<td><p>" + d.getDescricao() + "</p></td>");
+															out.println("<td class=\"font-weight-bold\">" + d.getStatus() + "</td>");
+															out.println("</tr>");
+														}
+                                            	}%>
                                             </tbody>
                                         </table>
                                     </div>
@@ -381,17 +383,17 @@
                                             </thead>
                                             <tbody>
                                             	<% if((List<Doacoes>) session.getAttribute("doacoes") != null) {
-                                            			int index = 0;
-                    									for(Doacoes d : (List<Doacoes>) session.getAttribute("doacoes")) {
-                    										index += 1;
-                    										out.println("<tr>");
-                    										out.println("<th scope=\"row\">" + index + "</th>");
-                        									out.println("<td> R$" + d.getValor() + "</td>");
-                        									out.println("<td>" + d.getDataRealizacao() + "</td>");
-                        									out.println("<td>" + d.getEstado() + "</td>");
-                        									out.println("</tr>");
-                        								}
-                									}%>
+                                            	    	int index = 0;
+                                            	        for(Doacoes d : (List<Doacoes>) session.getAttribute("doacoes")) {
+                                            	        	index += 1;
+                                            	            out.println("<tr>");
+                                            	            out.println("<th scope=\"row\">" + index + "</th>");
+                                            	            out.println("<td> R$" + d.getValor() + "</td>");
+                                            	            out.println("<td>" + new Conversor().getDate(d.getDataRealizacao()) + "</td>");
+                                            	            out.println("<td>" + d.getEstado() + "</td>");
+                                            	            out.println("</tr>");
+                                            	        }
+                                            	    }%>
                                             </tbody>
                                         </table>
                                     </div>

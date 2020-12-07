@@ -61,7 +61,7 @@ public class LoginFilter implements Filter {
                     chain.doFilter(request, response);
                     
                 } else {
-                	request.getRequestDispatcher("/admin.jsp").forward(request, response);
+                	request.getRequestDispatcher("/admin/index.jsp").forward(request, response);
                 }
             }
         }

@@ -3,7 +3,6 @@
 <%@page import="com.uff.fagulha.model.Denuncia"%>
 <%@page import="com.uff.fagulha.model.Usuario"%>
 <%@page import="java.util.List"%>
-<%@page import="java.util.concurrent.TimeUnit"%>
 <html lang="pt-br">
 
 <head>
@@ -108,13 +107,13 @@
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-email"></i>
 	                <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
-	                <input type="email" name="email" id="defaultForm-email" class="form-control validate">
+	                <input type="email" name="email" id="defaultForm-email" data-rule="required" data-msg="Email inválido" class="form-control validate">
 	              </div>
 	    
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-password"></i>
 	                <label data-error="wrong" data-success="right" for="defaultForm-pass">Senha</label>
-	                <input type="password" name="senha" id="defaultForm-pass" class="form-control validate">
+	                <input type="password" name="senha" id="defaultForm-pass" data-rule="maxlen:8" data-msg="Informe uma senha" class="form-control validate">
 	              </div>
 	
 	              <div class="options mt-1">
@@ -140,49 +139,49 @@
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-person"></i>
 	                <label data-error="wrong" data-success="right" for="defaultForm-text">Nome</label>
-	                <input type="text" id="defaultForm-text" name="nome" class="form-control validate">
+	                <input type="text" id="defaultForm-text" name="nome" data-rule="required" data-msg="Informe o seu nome" class="form-control validate">
 	              </div>
 	              
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-number"></i>
 	                <label data-error="wrong" data-success="right" for="defaultForm-text">Data de Nascimento</label>
-	                <input type="date" id="defaultForm-text" name="dataNascimento" class="form-control validate">
+	                <input type="date" id="defaultForm-text" name="dataNascimento" data-rule="required" data-msg="Informe uma data válida" class="form-control validate">
 	              </div>
 	              
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-location"></i>
 	                <label data-error="wrong" data-success="right" for="defaultForm-text">Cidade</label>
-	                <input type="text" id="defaultForm-text" name="cidade" class="form-control validate">
+	                <input type="text" id="defaultForm-text" name="cidade" data-rule="required" data-msg="Informe uma cidade" class="form-control validate">
 	              </div>
 	              
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-location"></i>
 	                <label data-error="wrong" data-success="right" for="defaultForm-text">Estado</label>
-	                <input type="text" id="defaultForm-text" name="estado" class="form-control validate">
+	                <input type="text" id="defaultForm-text" name="estado" data-rule="required" data-msg="Informe um estado" class="form-control validate">
 	              </div>
 	              
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-location"></i>
 	                <label data-error="wrong" data-success="right" for="defaultForm-text">País</label>
-	                <input type="text" id="defaultForm-text" name="pais" class="form-control validate">
+	                <input type="text" id="defaultForm-text" name="pais" data-rule="required" data-msg="Informe um país" class="form-control validate">
 	              </div>
 	              
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-location"></i>
 	                <label data-error="wrong" data-success="right" for="defaultForm-text">CPF</label>
-	                <input type="text" id="defaultForm-text" name="cpf" class="form-control validate">
+	                <input type="text" id="defaultForm-text" name="cpf" data-rule="required" data-msg="Informe um CPF válido" class="form-control validate">
 	              </div>
 	              
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-email"></i>
 	                <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
-	                <input type="email" id="defaultForm-email" name="email" class="form-control validate">
+	                <input type="email" id="defaultForm-email" name="email" data-rule="required" data-msg="Informe um email válido" class="form-control validate">
 	              </div>
 	    			
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-password"></i>
 	                <label data-error="wrong" data-success="right" for="defaultForm-pass">Senha</label>
-	                <input type="password" id="defaultForm-pass" name="senha" class="form-control validate">
+	                <input type="password" id="defaultForm-pass" name="senha" data-rule="required" data-msg="Informe uma senha" class="form-control validate">
 	              </div>
 	            </div>
             <!--Footer-->
@@ -213,6 +212,10 @@
         			out.println("<div class=\"alert alert-success\" role=\"alert\">");
         			out.println("Denúncia registrada com sucesso. Entraremos em contato!");
         			out.println("</div>");
+        		} else if ((String) session.getAttribute("mensagemCadastro") != null){
+        			out.println("<div class=\"alert alert-danger\" role=\"alert\">");
+        			out.println("Usuário já cadastrado!");
+        			out.println("</div>");
         		}
         	%>
         	
@@ -228,9 +231,9 @@
                     	for(Denuncia d : (List<Denuncia>) session.getAttribute("denuncias")) {
                     		int index = 0;
                     		if(d.getStatus() == 2){
-                    			out.println("<ul class=\"faq-list aos-init aos-animate\" data-aos=\"fade-up\"></ul>");
+                    			out.println("<ul class=\"faq-list aos-init aos-animate\" data-aos=\"fade-down\"></ul>");
                         		out.println("<li>");
-                        		out.println("<a data-toggle=\"collapse\" class=\"collapsed\" href=\"#faq" + index + "\" aria-expanded=\"false\">" + "Incêndio em " + d.getCidade() + ", " + d.getEstado() + "<i class=\"bx bx-chevron-down icon-show\"></i>");
+                        		out.println("<a data-toggle=\"collapse\" class=\"collapsed\" href=\"#faq" + index + "\" aria-expanded=\"false\">" + "Incêndio em " + d.getCidade() + ", " + d.getEstado() + "<i class=\"bx bx-chevron-down icon-show\"></i></a>");
                         		out.println("<div id=\"faq" + index + "\" class=\"collapse\" data-parent=\".faq-list\">");
                         		out.println("<p>" + d.getDescricao() + "</p>");
                         		out.println("</div>");
@@ -278,20 +281,20 @@
                                 <i class="icofont-location-pin"></i>
                                 <input type="text" class="form-control" name="estado" id="estado"
                                     placeholder="Estado" data-rule="required"
-                                    data-msg="Informe um estado">
+                                    data-msg="Informe o estado do ocorrido">
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group d-flex align-items-center">
                                 <i class="icofont-location-pin"></i>
                                 <input type="text" class="form-control" name="cidade" id="cidade"
                                     placeholder="Cidade" data-rule="required"
-                                    data-msg="Informe uma cidade">
+                                    data-msg="Informe a cidade do ocorrido">
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group d-flex align-items-start">
                                 <i class="icofont-file-document"></i>
-                                <textarea class="form-control" name="descricao" rows="5" data-rule="minlen:20"
-                                    data-msg="Please write something for us" placeholder="Descrição"></textarea>
+                                <textarea class="form-control" name="descricao" rows="5" data-rule="minlen:40"
+                                    data-msg="Relate o ocorrido" placeholder="Descrição"></textarea>
                                 <div class="validate"></div>
                             </div>
                             <div class="mb-3">

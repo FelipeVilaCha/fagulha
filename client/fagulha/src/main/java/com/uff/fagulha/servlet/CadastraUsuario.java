@@ -19,7 +19,7 @@ import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 
 import com.uff.fagulha.model.Usuario;
-import com.uff.fagulha.util.ConversorData;
+import com.uff.fagulha.util.Conversor;
 import com.uff.fagulha.util.Encriptador;
 
 /**
@@ -49,7 +49,7 @@ public class CadastraUsuario extends HttpServlet {
             
             Usuario usuario = new Usuario();
             
-            Date date = new ConversorData().transformTraco(request.getParameter("dataNascimento"));
+            Date date = new Conversor().transformTraco(request.getParameter("dataNascimento"));
             usuario.setDataNasc(date);
             usuario.setCidade(request.getParameter("cidade"));
             usuario.setCpf(request.getParameter("cpf"));
@@ -62,7 +62,7 @@ public class CadastraUsuario extends HttpServlet {
             Invocation call = wt.request().buildPost(Entity.xml(usuario));
             call.invoke();
             
-            session.setAttribute("usuario", usuario);
+            session.setAttribute("mensagemIndex", "sucesso");
             
             response.sendRedirect("https://fagulha-esperanca.herokuapp.com");
         } catch (URISyntaxException ex) {

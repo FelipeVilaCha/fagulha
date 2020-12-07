@@ -58,8 +58,8 @@
                 <ul>
                     <li><a href="index.jsp#header">Home</a></li>
                     <li><a href="index.jsp#about">Sobre</a></li>
-                    <li class="active"><a href="info.jsp">Informações</a></li>
-                    <li><a href="denuncia.jsp">Denúncias</a></li>
+                    <li class="active"><a href="infos.jsp">Informacoes</a></li>
+                    <li><a href="denuncia.jsp">Denuncias</a></li>
                 </ul>
             </nav>
             <!-- .nav-menu -->
@@ -127,7 +127,7 @@
                                     </div>
 
                                     <div class="options mt-1">
-                                        <p class="mb-0">Não é um membro? <a href="#" class="blue-text">Registrar-se</a>
+                                        <p class="mb-0">Nao e um membro? <a href="#" class="blue-text">Registrar-se</a>
                                         </p>
                                     </div>
                                 </div>
@@ -184,7 +184,7 @@
                                     <div class="md-form mb-2">
                                         <i class="icofont-ui-location"></i>
                                         <label data-error="wrong" data-success="right"
-                                            for="defaultForm-text">País</label>
+                                            for="defaultForm-text">Pais</label>
                                         <input type="text" id="defaultForm-text" name="pais"
                                             class="form-control validate">
                                     </div>
@@ -214,7 +214,7 @@
                                     </div>
 
                                     <div class="options mt-1">
-                                        <p class="mb-0">Já tem uma conta? <a href="#panel7" class="blue-text">Clique
+                                        <p class="mb-0">Ja tem uma conta? <a href="#panel7" class="blue-text">Clique
                                                 aqui</a></p>
                                     </div>
 
@@ -238,13 +238,64 @@
         </div>
     </div>
     <!--Modal: Login / Register Form-->
+	<!--Modal: Doacoes-->
+    <div class="modal fade" id="doeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <form action="criaDoacoes" method="post">
+          <div class="modal-header">
+            <h5 class="modal-title">Doacoes</h5>
+          </div>
+          <div class="modal-body mx-2">
+            <div class="md-form mb-2">
+              <i class="icofont-money"></i>
+              <label>Valor</label
+              >
+              <input
+                type="text"
+                name="valor"
+                id="defaultForm-pass"
+                class="form-control validate"
+              />
+            </div>
 
+            <div class="md-form mb-2">
+              <i class="icofont-location-pin"></i>
+              <label>Estado</label
+              >
+              <input
+                type="text"
+                name="estado"
+                id="defaultForm-pass"
+                class="form-control validate"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-success waves-effect ml-auto"
+              data-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button type="submit" class="btn btn-success">
+              Doar<i class="fas fa-sign-in ml-1"></i>
+            </button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--End Modal: Doacoes-->
     <main id="main">
         <div style="margin-top: 100px">
-            <h1 style="text-align: center; padding: 4rem 0">
-                Número de focos por estado em 24 horas
+            <h1 style="text-align: center; padding: 5rem 0 2rem 0">
+                Numero de focos por estado em 24 horas
             </h1>
+            <div style="width:800px;margin:auto">
             <canvas width="700" height="700" id="myChart"></canvas>
+            </div>
             <div style="text-align: center" id="notFound"></div>
         </div>
         <!-- ======= Count Section ======= -->
@@ -255,7 +306,7 @@
                         <div class="count-box">
                             <i class="icofont-forest-fire"></i>
                             <span data-toggle="counter-up">21.772</span>
-                            <p>Focos de incêndio registrados no Pantanal em 2020</p>
+                            <p>Focos de incendio registrados no Pantanal em 2020</p>
                         </div>
                     </div>
 
@@ -277,7 +328,7 @@
                                 <span data-toggle="counter-up">23</span>
                                 <span>%</span>
                             </div>
-                            <p>do Pantanal já foi queimado!</p>
+                            <p>do Pantanal ja foi queimado!</p>
                         </div>
                     </div>
                 </div>
@@ -286,27 +337,52 @@
         <!-- ======= End Count Section ======= -->
 
         <!-- ======= Info Section ======= -->
+        <section id="doacoes" class="about section-bg">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="content col-xl-5 d-flex align-center">
+            <div class="content">
+              <h3>Faca a sua doacao</h3>
+              <p>
+                Nos do time fagulha levamos muito a serio as nossas contribuicoes. Ajudando um estado, voce pode estar ajudando a vida de milhoes nesta e em futuras geracoes. Venha conosco.
+              </p>
+              <% if((Usuario) session.getAttribute("usuario") == null) {
+        		 	out.println("<a href=\"#modalLRForm\" class=\"about-btn\" data-toggle=\"modal\" data-target=\"#modalLRForm\"><span>Doe!</span> <i class=\"bx bx-chevron-left\"></i></a>");
+        		 } else {
+        		 	out.println("<a data-toggle=\"modal\" data-target=\"#doeModal\" class=\"about-btn\"><span>Doe!</span> <i class=\"bx bx-chevron-left\"></i></a>");
+        		 }%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
         <section id="info" class="tabs">
             <div class="container">
                 <ul class="nav nav-tabs row d-flex">
-                    <li class="nav-item col-3">
+                    <li class="nav-item col-4">
                         <a class="nav-link active show" data-toggle="tab" href="#tab-1">
                             <i class="ri-gps-line"></i>
-                            <h4 class="d-none d-lg-block">As causas das queimadas</h4>
+                            <h4 class="d-none d-lg-block">Causas</h4>
                         </a>
                     </li>
-                    <li class="nav-item col-3">
+                    <li class="nav-item col-4">
                         <a class="nav-link" data-toggle="tab" href="#tab-2">
                             <i class="ri-body-scan-line"></i>
                             <h4 class="d-none d-lg-block">
-                                O que fazer para evitar o problema?
+                                Solucoes
                             </h4>
                         </a>
                     </li>
-                    <li class="nav-item col-3">
+                    <li class="nav-item col-4">
                         <a class="nav-link" data-toggle="tab" href="#tab-3">
                             <i class="ri-sun-line"></i>
-                            <h4 class="d-none d-lg-block">Como você pode agir</h4>
+                            <h4 class="d-none d-lg-block">Voce</h4>
+                        </a>
+                    </li>
+                    <li class="nav-item col-4">
+                        <a class="nav-link" data-toggle="tab" href="#tab-4">
+                            <i class="ri-sun-line"></i>
+                            <h4 class="d-none d-lg-block">Impacto</h4>
                         </a>
                     </li>
                 </ul>
@@ -316,18 +392,18 @@
                         <div class="row">
                             <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0" data-aos-delay="100">
                                 <p>
-                                    A Amazônia possui condições climáticas que fazem dela uma
-                                    floresta úmida e de altas temperaturas durante o ano todo,
-                                    praticamente. Dessa forma, quando há focos de queimadas e
-                                    incêndios florestais, não há possibilidade desse fogo ter
-                                    sido causado de forma natural, e sim artificial, antrópica.
-                                    Assim, podemos encontrar três tipos de queimadas no bioma:
+                                    A Amazonia possui condicoes climaticas que fazem dela uma
+                                    floresta umida e de altas temperaturas durante o ano todo,
+                                    praticamente. Dessa forma, quando ha focos de queimadas e
+                                    incendios florestais, nao ha possibilidade desse fogo ter
+                                    sido causado de forma natural, e sim artificial, antropica.
+                                    Assim, podemos encontrar tres tipos de queimadas no bioma:
                                 </p>
                                 <ul>
                                     <li>- Renovar o pasto;</li>
-                                    <li>- Desmatar grandes áreas;</li>
+                                    <li>- Desmatar grandes areas;</li>
                                     <li>
-                                        - Fogo em áreas já desmatadas, o chamado incêndio
+                                        - Fogo em areas ja desmatadas, o chamado incendio
                                         florestal.
                                     </li>
                                 </ul>
@@ -344,29 +420,34 @@
                         <div class="row">
                             <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                                 <p>
-                                    O professor Thiago Izzo, pós-doutor em Biologia,
+                                    O professor Thiago Izzo, pos-doutor em Biologia,
                                     especialista em Ecologia Evolutiva e professor da
-                                    Universidade Federal de Mato Grosso (UFMT) defende que, além
-                                    de remediar, é necessário impedir que o fogo ocorra
-                                    novamente. “É importante que no ano que vem, em março,
-                                    abril, no máximo, já comecem campanhas de prevenção e
-                                    fiscalização. Desta vez, a atenção está se dando no final do
+                                    Universidade Federal de Mato Grosso (UFMT) defende que, alem
+                                    de remediar, e necessario impedir que o fogo ocorra
+                                    novamente. “e importante que no ano que vem, em marco,
+                                    abril, no maximo, ja comecem campanhas de prevencao e
+                                    fiscalizacao. Desta vez, a atencao esta se dando no final do
                                     processo”, lamenta.
                                 </p>
                                 <br />
                                 <p>
-                                    O pesquisador compara os incêndios deste ano à pandemia do
-                                    novo coronavírus: “Nunca havíamos passado por isso”. Apesar
-                                    do histórico de fogo que já existe no bioma em épocas e
-                                    extensões específicas, Izzo afirma que o incêndio desta vez
-                                    “atingiu proporções inéditas”. Uma alternativa para os
-                                    próximos anos, acrescenta, é a técnica de fogo controlado,
-                                    já utilizada antes, para impedir que esses grandes incêndios
-                                    saiam do controle. As florestas são enormes campos de
-                                    material combustível, como folhas secas, madeiras e
-                                    arbustos. Com as chamas controladas, parte do material já
-                                    vai ser consumido, havendo muito menos matéria para ser
+                                    O pesquisador compara os incendios deste ano a pandemia do
+                                    novo coronavirus: “Nunca haviamos passado por isso”. Apesar
+                                    do historico de fogo que ja existe no bioma em epocas e
+                                    extensoes especificas, Izzo afirma que o incendio desta vez
+                                    “atingiu proporcoes ineditas”. Uma alternativa para os
+                                    proximos anos, acrescenta, e a tecnica de fogo controlado,
+                                    ja utilizada antes, para impedir que esses grandes incendios
+                                    saiam do controle. As florestas sao enormes campos de
+                                    material combustivel, como folhas secas, madeiras e
+                                    arbustos. Com as chamas controladas, parte do material ja
+                                    vai ser consumido, havendo muito menos materia para ser
                                     queimada quando a seca chegar.
+                                    
+                                    Ao lado, um mapa que demonstra, no Brasil, as areas em 
+                                    protecao ambiental levando em conta os diferentes biomas
+                                    brasileiros. A hora de acordar e ajudar a nossa nacao e planeta
+                                    e agora. 
                                 </p>
                                 <p>
                                     <a
@@ -374,7 +455,7 @@
                                 </p>
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                <img src="assets/img/tabs2.jpg" alt="" class="img-fluid" />
+                                <img src="assets/img/ed09_p53_info.png" alt="" class="img-fluid" />
                             </div>
                         </div>
                     </div>
@@ -382,23 +463,47 @@
                         <div class="row">
                             <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                                 <p>
-                                    Grandes biomas do Brasil estão em chamas e as imagens que
-                                    chegam a todo o momento são preocupantes. Saiba como agir
-                                    pela proteção ambiental
+                                    Grandes biomas do Brasil estao em chamas e as imagens que
+                                    chegam a todo o momento sao preocupantes. Saiba como agir
+                                    pela protecao ambiental
                                 </p>
                                 <ul>
-                                    <li>- Compartilhe informações</li>
+                                    <li>- Compartilhe informacoes</li>
                                     <li>- Fiscalize</li>
                                     <li>- Cobre das autoridades</li>
-                                    <li>- Participe de iniciativas de proteção ambiental</li>
+                                    <li>- Participe de iniciativas de protecao ambiental</li>
                                 </ul>
                                 <p>
                                     <a
-                                        href="https://www.greenpeace.org/brasil/blog/7-coisas-que-voce-pode-fazer-pelo-pantanal/">Fonte</a>
+                                        href="https://www.greenpeace.org/brasil/blog/7-coisas-que-voce-pode-fazer-pelo-pantanal/">De os seus primeiros passos</a>
                                 </p>
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 text-center">
                                 <img src="assets/img/tabs3.jpg" alt="" class="img-fluid" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab-4">
+                        <div class="row">
+                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                <p>
+                                    A resposta ao fogo pode ser abrupta. "Em anos de seca, a mortalidade pode chegar a 
+                                    90% das árvores, principalmente na borda da floresta amazonica", diz um estudo científico 
+                                    publicado recentemente, mencionando os impactos das queimadas.
+									Com a alta mortalidade, a paisagem muda drasticamente e nessas condições, 
+									o fogo pode varrer do mapa a floresta densa que já ocupou a área atingida.
+									As queimadas podem deixar a floresta tão degradada que ela já não tem mais cara de floresta. 
+									A invasão de gramíneas e a perda da diversidade das espécies não permitem que a floresta volte 
+									a ser densa – o que são impactos irreversíveis nesse cenário de temperatura subindo e estação de seca 
+									mais prolongada.
+                                </p>
+                                <p>
+                                    <a
+                                        href="https://www.dw.com/pt-br/queimadas-na-amaz%C3%B4nia-podem-causar-danos-irrevers%C3%ADveis/a-50161460">Fonte da informação</a>
+                                </p>
+                            </div>
+                            <div class="col-lg-6 order-1 order-lg-2 text-center">
+                                <img src="assets/img/50160308_303.jpg" alt="" class="img-fluid" />
                             </div>
                         </div>
                     </div>
@@ -427,7 +532,7 @@
                     </div>
 
                     <div class="col-lg-4 col-md-4 footer-links">
-                        <h4>Links Úteis</h4>
+                        <h4>Links uteis</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="www.ibama.gov.br">Ibama</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a
@@ -473,12 +578,16 @@
     <script src="assets/vendor/venobox/venobox.min.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
     <script async>
-        const BASE_API_URL = 'http://localhost:7777';
+    	const BASE_API_URL = 'https://9r7a896r4l.execute-api.sa-east-1.amazonaws.com/default/serverless-dev-hello';
         let labels = [];
         let data = [];
         let colors = [];
         const options = {
-            method: 'GET',
+        		headers: {
+        	          'Origin': "http://127.0.0.1:8080/",
+        	          'Access-Control-Allow-Origin': '*',
+        	          'method': 'GET',
+        	        }
         };
 
         function handleError() {
@@ -489,13 +598,12 @@
             document.getElementById('notFound').innerHTML = `<p>We do not found any data</p>`
         }
 
+        window.addEventListener('fetch', () => console.log('fetched'))
+        
         try {
             fetch(BASE_API_URL, options)
-                .fail(() => {
-                    handleError()
-                })
                 .then(function (response) {
-                    if (!response.ok) {
+                	if (response.status !== 200) {
                         handleError()
 
                         throw Error(response);

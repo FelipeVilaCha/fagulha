@@ -2,6 +2,9 @@ package com.uff.fagulha.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -64,5 +67,19 @@ public class ConversorData {
 	    }
 	    
 	    return dataFmt;
+	}
+	
+	public String getDate(Date date) {
+		SimpleDateFormat f = new SimpleDateFormat("dd/MM/yyyy");
+	    String dataFmt = "";
+	    dataFmt = f.format(date);
+	    
+	    return dataFmt;
+	}
+	
+	public int getIdade(Date date) {
+		LocalDate nascimento = LocalDate.of(date.getYear(), date.getMonth(), date.getDay());
+		LocalDate now = LocalDate.now();
+		return Period.between(nascimento, now).getYears();
 	}
 }

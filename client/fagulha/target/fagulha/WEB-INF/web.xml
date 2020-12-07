@@ -59,6 +59,10 @@
   <servlet-name>ConsultaUsuario</servlet-name>
   <servlet-class>com.uff.fagulha.servlet.ConsultaUsuario</servlet-class>
  </servlet>
+  <servlet>
+  <servlet-name>ConsultaUsuarios</servlet-name>
+  <servlet-class>com.uff.fagulha.servlet.ConsultaUsuarios</servlet-class>
+ </servlet>
  <servlet>
   <servlet-name>ConsultaDoacoesPorUsuario</servlet-name>
   <servlet-class>com.uff.fagulha.servlet.ConsultaDoacoesPorUsuario</servlet-class>
@@ -110,6 +114,10 @@
  <servlet-mapping>
   <servlet-name>ConsultaUsuario</servlet-name>
   <url-pattern>/getUsuario</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ConsultaUsuarios</servlet-name>
+  <url-pattern>/getUsuarios</url-pattern>
  </servlet-mapping>
  <servlet-mapping>
   <servlet-name>ConsultaDoacoesPorUsuario</servlet-name>

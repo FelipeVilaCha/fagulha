@@ -21,7 +21,7 @@ import javax.ws.rs.core.Response;
 
 import com.uff.fagulha.model.Doacoes;
 import com.uff.fagulha.model.Usuario;
-import com.uff.fagulha.util.ConversorData;
+import com.uff.fagulha.util.Conversor;
 
 /**
  *
@@ -49,8 +49,7 @@ public class CriaDoacoes extends HttpServlet {
             wt.request().accept("application/xml");
             
             Usuario usuario = ((Usuario) session.getAttribute("usuario"));
-            
-            Date date = new ConversorData().transformBarra(new Date());
+            Date date = new Conversor().transformTraco(new Date());
 
             doacao = new Doacoes(Integer.parseInt(request.getParameter("valor")), date, request.getParameter("estado"), usuario);
 
@@ -58,9 +57,9 @@ public class CriaDoacoes extends HttpServlet {
             Response resposta = call.invoke();
             
             if(resposta.getStatus() == 204 || resposta.getStatus() == 200) {
-            	session.removeAttribute("mensagemDenuncia");
+            	session.removeAttribute("mensagemDoacao");
             } else {
-            	session.setAttribute("mensagemDenuncia", "erro");
+            	session.setAttribute("mensagemDoacao", "erro");
             }
             
             request.getRequestDispatcher("/infos.jsp").forward(request, response);

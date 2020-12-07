@@ -16,7 +16,7 @@
 	}%>
 	<jsp:include page="/homeAdmin"/>
 	
-	<form action="cadastraUsuario" method="post">
+	<form action="https://fagulha-esperanca.herokuapp.com/cadastraUsuario" method="post">
 	            <div class="body mx-2">
 	              
 	              <div class="md-form mb-2">
@@ -72,7 +72,6 @@
 	              </div>
 	            </div>
               <button type="submit" class="btn btn-success">Entrar<i class="fas fa-sign-in ml-1"></i></button>
-            </div>
           </form>
 </body>
 </html>

@@ -26,7 +26,7 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import com.uff.fagulha.model.Usuario;
-import com.uff.fagulha.util.ConversorData;
+import com.uff.fagulha.util.Conversor;
 import com.uff.fagulha.util.Encriptador;
 
 /**
@@ -56,7 +56,7 @@ public class EditaUsuario extends HttpServlet {
             wt = client.target(uri);
             wt.request().accept("application/xml");
             
-            Date date = new ConversorData().transformBarra(request.getParameter("dataNascimento"));
+            Date date = new Conversor().transformBarra(request.getParameter("dataNascimento"));
             
             usuario.setCpf(request.getParameter("cpf"));
             usuario.setDataNasc(date);
