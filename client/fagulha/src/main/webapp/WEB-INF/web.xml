@@ -71,6 +71,10 @@
   <servlet-name>EditaUsuario</servlet-name>
   <servlet-class>com.uff.fagulha.servlet.EditaUsuario</servlet-class>
  </servlet>
+  <servlet>
+  <servlet-name>teste</servlet-name>
+  <servlet-class>com.uff.fagulha.servlet.teste</servlet-class>
+ </servlet>
  <servlet-mapping>
   <servlet-name>RealizaLogin</servlet-name>
   <url-pattern>/login</url-pattern>
@@ -124,6 +128,10 @@
   <url-pattern>/getDoacoes</url-pattern>
  </servlet-mapping>
   <servlet-mapping>
+  <servlet-name>teste</servlet-name>
+  <url-pattern>/teste</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
   <servlet-name>EditaUsuario</servlet-name>
   <url-pattern>/editaUsuario</url-pattern>
  </servlet-mapping>

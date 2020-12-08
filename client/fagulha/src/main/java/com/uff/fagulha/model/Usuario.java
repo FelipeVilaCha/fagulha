@@ -36,6 +36,8 @@ public class Usuario implements Serializable {
     private String pais;
     @Column(name = "CPF")
     private String cpf;
+    @Column(name = "Foto")
+    private String foto;
     @Column(name="DENUNCIAS")
     private List<Denuncia> denuncias;
     @Column(name="DOACOES")
@@ -151,4 +153,12 @@ public class Usuario implements Serializable {
     public void setDoacoes(List<Doacoes> doacoes) {
         this.doacoes = doacoes;
     }
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 }

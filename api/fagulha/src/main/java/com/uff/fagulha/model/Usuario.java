@@ -2,6 +2,7 @@ package com.uff.fagulha.model;
 
 import java.io.Serializable;
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -48,6 +49,8 @@ public class Usuario implements Serializable {
     private String pais;
     @Column(name = "CPF")
     private String cpf;
+    @Column(name = "Foto")
+    private String foto;
 
     public Usuario() {
     }
@@ -56,7 +59,7 @@ public class Usuario implements Serializable {
         this.id = idUser;
     }
 
-    public Usuario(Integer idUser, String email, String senha, String nome, Date dataNasc, String cidade, String estado, String pais, String cpf) {
+    public Usuario(Integer idUser, String email, String senha, String nome, Date dataNasc, String cidade, String estado, String pais, String cpf, String foto) {
         this.id = idUser;
         this.email = email;
         this.senha = senha;
@@ -66,6 +69,7 @@ public class Usuario implements Serializable {
         this.estado = estado;
         this.pais = pais;
         this.cpf = cpf;
+        this.foto = foto;
     }
 
     public Integer getId() {
@@ -139,4 +143,12 @@ public class Usuario implements Serializable {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 }

@@ -58,7 +58,7 @@ public class AtualizaDenuncia extends HttpServlet {
             	session.setAttribute("mensagem", "sucesso");
             }
             
-            request.getRequestDispatcher("/admin/denuncia.jsp").forward(request, response);
+            response.sendRedirect("https://fagulha-esperanca.herokuapp.com/admin/denuncia.jsp");
         } catch (URISyntaxException ex) {
             Logger.getLogger(AtualizaDenuncia.class.getName()).log(Level.SEVERE, null, ex);
         }

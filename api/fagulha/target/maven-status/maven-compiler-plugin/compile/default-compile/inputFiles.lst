@@ -1,12 +1,13 @@
-C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\model\Denuncia.java
-C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\model\Doacoes.java
 C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\dao\ManagerDAO.java
 C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\dao\DenunciaDAO.java
 C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\model\Usuario.java
+C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\service\UsuarioService.java
+C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\model\Denuncia.java
+C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\model\Doacoes.java
+C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\util\Conversor.java
 C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\service\DenunciaService.java
 C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\dao\DoacoesDAO.java
 C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\service\ApplicationConfig.java
-C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\service\UsuarioService.java
 C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\dao\UsuarioDAO.java
 C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\service\DoacoesService.java
 C:\Users\felip\eclipse\workspaces\Fagulha-API\fagulha\src\main\java\com\uff\fagulha\util\EnviaEmail.java

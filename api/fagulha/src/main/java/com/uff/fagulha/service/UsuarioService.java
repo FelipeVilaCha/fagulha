@@ -59,7 +59,21 @@ public class UsuarioService {
           
         } 
     }
-
+    
+    @PUT
+    @Path("foto/{id}")
+    @Consumes(MediaType.APPLICATION_XML)
+    public void putFoto(@PathParam("id") int id, Usuario usuario) {
+        try {
+        	Usuario old_usuario = new UsuarioDAO().getUsuarioById(id);
+        	old_usuario.setFoto(usuario.getFoto());
+        	
+            new UsuarioDAO().updateUsuario(usuario);
+        } catch(Exception ex) {
+          
+        } 
+    }
+    
     @DELETE
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_XML)

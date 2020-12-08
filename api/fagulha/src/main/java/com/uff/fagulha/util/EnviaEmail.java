@@ -25,7 +25,7 @@ public class EnviaEmail {
     	} else if (objeto instanceof Doacoes && tipo.equals("criacao")) {
     		titulo = "Fagulha - Doação Recebida!";
     	} else if (objeto instanceof Denuncia && tipo.equals("atualizacao")) {
-    		titulo = "Fagulha - Sua denúncia foi atualizada!";
+    		titulo = "Fagulha - Denúncia Atualizada!";
     	}
     	
     	return titulo;
@@ -37,11 +37,11 @@ public class EnviaEmail {
     	if (tipo.equals("criacao") && objeto instanceof Usuario) {
     		corpo = "Olá " + ((Usuario) objeto).getNome() + " ! Estamos muito felizes com o seu cadastro. Vamos salvar a nossa natureza!";
     	} else if (tipo.equals("criacao") && objeto instanceof Denuncia) {
-    		corpo = "Olá " + ((Denuncia) objeto).getUsuario().getNome() + " ! Recebemos a sua denúncia de id: " + String.valueOf(((Denuncia) objeto).getId()) + " e analisaremos com cuidado!";
+    		corpo = "Olá " + ((Denuncia) objeto).getUsuario().getNome() + " ! Recebemos a sua denúncia #" + String.valueOf(((Denuncia) objeto).getId()) + " e analisaremos com cuidado!";
     	} else if (tipo.equals("criacao") && objeto instanceof Doacoes){
     		corpo = "Olá " + ((Doacoes) objeto).getUsuario().getNome() + " ! Obrigado pela sua doação! O estado do " + ((Doacoes) objeto).getEstado() + " é muito grato pela sua ajuda! Vamos em frente!";
     	} else if (tipo.equals("atualizacao") && objeto instanceof Denuncia) {
-    		corpo = "Olá " + ((Denuncia) objeto).getUsuario().getNome() + " ! A sua denúncia de id: " + String.valueOf(((Denuncia) objeto).getId()) + "foi atualizada e agora se encontra " + String.valueOf(((Denuncia) objeto).getStatus()) + "!";
+    		corpo = "Olá " + ((Denuncia) objeto).getUsuario().getNome() + " ! A sua denúncia #" + String.valueOf(((Denuncia) objeto).getId()) + " foi atualizada e agora se encontra " + new Conversor().getStatus(((Denuncia) objeto).getStatus()) + "!";
     	}
     	
     	return corpo;

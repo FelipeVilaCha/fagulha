@@ -285,6 +285,41 @@
       </div>
     </section>
     <!-- End About Section -->
+    <section id="count-info" class="counts">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="count-box">
+                            <i class="icofont-forest-fire"></i>
+                            <span data-toggle="counter-up">21.772</span>
+                            <p>Focos de incendio registrados no Pantanal em 2020</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 mt-4 mt-md-0">
+                        <div class="count-box">
+                            <i class="icofont-fire-burn"></i>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <span data-toggle="counter-up">200</span>
+                                <span>%</span>
+                            </div>
+                            <p>De aumento de queimadas no pantanal em 2020</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 mt-4 mt-lg-0">
+                        <div class="count-box">
+                            <i class="icofont-tree-alt"></i>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <span data-toggle="counter-up">23</span>
+                                <span>%</span>
+                            </div>
+                            <p>do Pantanal ja foi queimado!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     <!-- Twitter integration Section -->
     <div class="section-title pt-5">
         <h2>Últimas Notícias</h2>

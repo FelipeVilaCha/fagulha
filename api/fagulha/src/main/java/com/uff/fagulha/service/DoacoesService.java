@@ -9,6 +9,7 @@ import com.uff.fagulha.util.EnviaEmail;
 import java.io.IOException;
 import java.util.List;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -55,5 +56,16 @@ public class DoacoesService {
         } catch(Exception ex) {
             
         } 
+    }
+    
+    @DELETE
+    @Path("{id}")
+    @Consumes(MediaType.APPLICATION_XML)
+    public void delete(@PathParam("id") int id) {
+        try {
+            new DoacoesDAO().removeDoacoes(id);
+        } catch(Exception ex) {
+        
+        }
     }
 }

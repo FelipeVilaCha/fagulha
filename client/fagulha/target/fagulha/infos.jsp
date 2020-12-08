@@ -298,43 +298,6 @@
             </div>
             <div style="text-align: center" id="notFound"></div>
         </div>
-        <!-- ======= Count Section ======= -->
-        <section id="count-info" class="counts">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="count-box">
-                            <i class="icofont-forest-fire"></i>
-                            <span data-toggle="counter-up">21.772</span>
-                            <p>Focos de incendio registrados no Pantanal em 2020</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-12 mt-4 mt-md-0">
-                        <div class="count-box">
-                            <i class="icofont-fire-burn"></i>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <span data-toggle="counter-up">200</span>
-                                <span>%</span>
-                            </div>
-                            <p>De aumento de queimadas no pantanal em 2020</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-12 mt-4 mt-lg-0">
-                        <div class="count-box">
-                            <i class="icofont-tree-alt"></i>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <span data-toggle="counter-up">23</span>
-                                <span>%</span>
-                            </div>
-                            <p>do Pantanal ja foi queimado!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ======= End Count Section ======= -->
 
         <!-- ======= Info Section ======= -->
         <section id="doacoes" class="about section-bg">
@@ -455,7 +418,7 @@
                                 </p>
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                <img src="assets/img/ed09_p53_info.png" alt="" class="img-fluid" />
+                                <img src="assets/img/ed09_p53_info.jpg" alt="" class="img-fluid" />
                             </div>
                         </div>
                     </div>
@@ -496,14 +459,17 @@
 									A invasao de gramineas e a perda da diversidade das especies nao permitem que a floresta volte 
 									a ser densa – o que sao impactos irreversiveis nesse cenario de temperatura subindo e estaçao de seca 
 									mais prolongada.
+									
+									Ao lado o mapa de focos desses incendios no ano de 2020, somente em solo brasileiro. Podemos observar que
+									a situação esta fora de controle. Cabe a nos, ajudarmos e nos colocar na linha de frente,
                                 </p>
                                 <p>
                                     <a
-                                        href="https://www.dw.com/pt-br/queimadas-na-amaz%C3%B4nia-podem-causar-danos-irrevers%C3%ADveis/a-50161460">Fonte da informaçao</a>
+                                        href="https://www.dw.com/pt-br/queimadas-na-amaz%C3%B4nia-podem-causar-danos-irrevers%C3%ADveis/a-50161460">Fonte da informacao</a>
                                 </p>
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                <img src="assets/img/50160308_303.jpg" alt="" class="img-fluid" />
+                                <img src="assets/img/focos_2020.png" alt="" class="img-fluid" />
                             </div>
                         </div>
                     </div>

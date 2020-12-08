@@ -3,6 +3,7 @@ package com.uff.fagulha.service;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -61,12 +62,26 @@ public class DenunciaService {
     @PUT
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_XML)
-    public void put(@PathParam("id") int id, Denuncia denuncia) {
+    public void put(@PathParam("id") int id, Denuncia d) {
         try {
+        	Denuncia denuncia = new DenunciaDAO().getDenunciaById(id);
+        	denuncia.setStatus(d.getStatus());
+        	
         	new DenunciaDAO().updateDenuncia(denuncia);
             new EnviaEmail().envia(denuncia.getUsuario().getEmail(), "atualizacao", denuncia);
         } catch(Exception ex) {
             
         } 
+    }
+    
+    @DELETE
+    @Path("{id}")
+    @Consumes(MediaType.APPLICATION_XML)
+    public void delete(@PathParam("id") int id) {
+        try {
+            new DenunciaDAO().removeDenuncia(id);
+        } catch(Exception ex) {
+        
+        }
     }
 }
