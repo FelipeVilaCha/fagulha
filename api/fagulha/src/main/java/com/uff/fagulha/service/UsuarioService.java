@@ -42,11 +42,11 @@ public class UsuarioService {
     @Produces(MediaType.APPLICATION_XML)
     public void cria(Usuario usuario) {
         try {  
-            new UsuarioDAO().insereUsuario(usuario);
-            new EnviaEmail().envia(usuario.getEmail(), "criacao", usuario);
+        	new UsuarioDAO().insereUsuario(usuario);
+        	new EnviaEmail().envia(usuario.getEmail(), "criacao", usuario);
         } catch (Exception ex) {
             
-        } 
+        }
     }
 
     @PUT
