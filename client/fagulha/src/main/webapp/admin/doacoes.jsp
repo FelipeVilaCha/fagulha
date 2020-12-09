@@ -71,7 +71,7 @@
         <!-- .nav-menu -->
 
         <a
-          href="index.jsp"
+          href="https://fagulha-esperanca.herokuapp.com/index.jsp"
           class="get-started-btn scrollto"
           >Logout</a
         >

@@ -36,14 +36,9 @@
         <!-- Template Main CSS File -->
         <link href="assets/css/style.css" rel="stylesheet" />
     
-        <!-- =======================================================
-      * Template Name: Presento - v2.0.1
-      * Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
-      * Author: BootstrapMade.com
-      * License: https://bootstrapmade.com/license/
-      ======================================================== -->
-    </head> 
-    <jsp:include page="/getUsuario"/>
+       
+    </head>
+    <jsp:include page="/getUsuario"/> 
     <jsp:include page="/getDoacoes"/> 
     <jsp:include page="/getDenuncia"/>
     <body>
@@ -114,18 +109,18 @@
 	            <div class="modal-body mx-2">
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-email"></i>
-	                <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
-	                <input type="email" name="email" id="defaultForm-email" class="form-control validate">
+	                <label for="defaultForm-email">Email</label>
+	                <input type="email" name="email" id="defaultForm-email" class="form-control validate" required>
 	              </div>
 	    
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-password"></i>
-	                <label data-error="wrong" data-success="right" for="defaultForm-pass">Senha</label>
-	                <input type="password" name="senha" id="defaultForm-pass" class="form-control validate">
+	                <label for="defaultForm-pass">Senha</label>
+	                <input type="password" name="senha" id="defaultForm-pass" class="form-control validate" required>
 	              </div>
 	
 	              <div class="options mt-1">
-	                <p class="mb-0">Não é um membro? <a href="#" class="blue-text">Registrar-se</a></p>
+	                <p class="mb-0">Não é um membro? <a href="#panel8" class="blue-text">Registrar-se</a></p>
 	              </div>
 	            </div>
 	            <!--Footer-->
@@ -146,50 +141,50 @@
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-person"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-text">Nome</label>
-                <input type="text" id="defaultForm-text" name="nome" class="form-control validate">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" class="form-control validate" required>
               </div>
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-number"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-text">Data de Nascimento</label>
-                <input type="date" id="defaultForm-text" name="dataNascimento" class="form-control validate">
+                <label for="dataNascimento">Data de Nascimento</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" class="form-control validate" required>
               </div>
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-location"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-text">Cidade</label>
-                <input type="text" id="defaultForm-text" name="cidade" class="form-control validate">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" name="cidade" class="form-control validate" required>
               </div>
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-location"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-text">Estado</label>
-                <input type="text" id="defaultForm-text" name="estado" class="form-control validate">
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" name="estado" class="form-control validate" required minlength="2" maxlength="2">
               </div>
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-location"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-text">País</label>
-                <input type="text" id="defaultForm-text" name="pais" class="form-control validate">
+                <label for="pais">País</label>
+                <input type="text" id="pais" name="pais" class="form-control validate" required>
               </div>
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-location"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-text">CPF</label>
-                <input type="text" id="defaultForm-text" name="cpf" class="form-control validate">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" name="cpf" class="form-control validate" required minlength="11" maxlength="11">
               </div>
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-email"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
-                <input type="email" id="defaultForm-email" name="email" class="form-control validate">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control validate" required>
               </div>
     			
               <div class="md-form mb-2">
                 <i class="icofont-ui-password"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-pass">Senha</label>
-                <input type="password" id="defaultForm-pass" name="senha" class="form-control validate" data-rule="len:8">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" class="form-control validate" required>
               </div>
 
               <div class="options mt-1">
@@ -207,12 +202,11 @@
           
           <!--/.Panel 8-->
         </div>
-
-      </div>
-    </div>
-    <!--/.Content-->
-  </div>
-</div>
+      	</div>
+    	</div>
+    	<!--/.Content-->
+  		</div>
+		</div>
         <!--Modal: Login / Register Form-->
     
         <!-- Modal Upload de imagem -->
@@ -226,7 +220,7 @@
                             data-dismiss="modal"><i class="icofont-close"></i></button>
                     </div>
                     <div class="modal-body">
-                        <form method="POST" action="/editaUsuario">
+                        <form style="display: flex; justify-content: center" method="POST" action="/editaUsuario">
 		                	<div>
 		                        <input
 		                        	class="align-content-lg-center"
@@ -236,7 +230,7 @@
 		                            aria-describedby="inputGroupFileAddon01"
 		                      	/>
 		                      	<input type="hidden" id="file" name="file" value="">
-		                	<input type="submit" value="Upload" class="input-group-text" id="inputGroupFileAddon01">
+		                	<input type="submit" value="Upload" style="width: 100%; display: block" class="input-group-text" id="inputGroupFileAddon01">
 		                    </div>
 		              </form>
                     </div>
@@ -259,7 +253,7 @@
                             <div class="section-title">
                                 <h4>Editar perfil</h4>
                             </div>
-                            <button data-toggle="modal" data-target="#imageModal"> Atualizar foto </button>
+                            <button btn btn-success style="margin: auto;display: block" data-toggle="modal" data-target="#imageModal"> Atualizar foto </button>
                             <form action="editaUsuario" method="post" role="form" class="php-email-form">
                                     <div class="row">
                                         <div class="d-flex justify-content-center mb-3">
@@ -283,30 +277,26 @@
                                     </div>
                                 <div class="d-flex">
                                 <div class="form-group pr-1">
-                                    <label>Nome Completo</label>
+                                    <label>Nome</label>
                                     <input type="text" class="form-control" name="nome" id="nome"
-                                        placeholder="<%=((Usuario) session.getAttribute("usuario")).getNome()%>" data-rule="minlen:4">
-                                    <div class="validate"></div>
+                                        value="<%=((Usuario) session.getAttribute("usuario")).getNome()%>" required>
                                 </div>
                                 <div class="form-group pl-1">
                                     <label>E-mail</label>
                                     <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="<%=((Usuario) session.getAttribute("usuario")).getEmail()%>" data-rule="minlen:4">
-                                    <div class="validate"></div>
+                                        value="<%=((Usuario) session.getAttribute("usuario")).getEmail()%>" required>
                                 </div>
                             </div>
                                 <div class="d-flex">
                                 <div class="form-group pr-1">
                                     <label>Data de Nascimento</label>
                                     <input type="text" class="form-control" name="dataNascimento" id="datanascimento"
-                                        placeholder="<%=new Conversor().getDate(((Usuario) session.getAttribute("usuario")).getDataNasc())%>" data-rule="len:8">
-                                    <div class="validate"></div>
+                                        placeholder="<%=new Conversor().getDate(((Usuario) session.getAttribute("usuario")).getDataNasc())%>" required>
                                 </div>
                                 <div class="form-group pl-1">
                                     <label>CPF</label>
                                     <input type="text" class="form-control" name="cpf" id="cpf"
-                                        placeholder="<%=((Usuario) session.getAttribute("usuario")).getCpf()%>" data-rule="len:11">
-                                    <div class="validate"></div>
+                                        placeholder="<%=((Usuario) session.getAttribute("usuario")).getCpf()%>" required minlength="11" maxlength="11">
                                 </div>
                             </div>
                                 
@@ -314,33 +304,26 @@
                                     <div class="form-group">
                                         <label>Cidade</label>
                                         <input type="text" class="form-control" name="cidade" id="cidade"
-                                            placeholder="<%=((Usuario) session.getAttribute("usuario")).getCidade()%>" data-rule="minlen:4">
-                                        <div class="validate"></div>
+                                            placeholder="<%=((Usuario) session.getAttribute("usuario")).getCidade()%>" required>
                                     </div>
                                     <div class="form-group px-2">
                                         <label>Estado</label>
                                         <input type="text" class="form-control" name="estado" id="estado"
-                                            placeholder="<%=((Usuario) session.getAttribute("usuario")).getEstado()%>" data-rule="minlen:2">
+                                            placeholder="<%=((Usuario) session.getAttribute("usuario")).getEstado()%>" required minlength="2" maxlength="2">
                                         <div class="validate"></div>
                                     </div>
                                     <div class="form-group">
                                         <label>País</label>
                                         <input type="text" class="form-control" name="pais" id="pais"
-                                            placeholder="<%=((Usuario) session.getAttribute("usuario")).getPais()%>" data-rule="minlen:2">
-                                        <div class="validate"></div>
+                                            placeholder="<%=((Usuario) session.getAttribute("usuario")).getPais()%>" required>
                                     </div>
                                 </div>
     
                                 <div class="form-group">
                                     <label>Senha</label>
                                     <input type="password" class="form-control" name="senha" id="password"
-                                        placeholder="<%=((Usuario) session.getAttribute("usuario")).getSenha()%>" data-rule="maxlen:8"
-                                        data-msg="Entre com a sua senha de oito digitos">
-                                    <div class="validate"></div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="loading">Carregando</div>
-                                </div>
+                                        placeholder="<%=((Usuario) session.getAttribute("usuario")).getSenha()%>" required>
+   	                            </div>
                                 <div class="text-center"><button type="submit">Salvar</button></div>
                             </form>
                         </div>

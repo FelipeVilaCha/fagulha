@@ -66,7 +66,7 @@
       </nav>
       <!-- .nav-menu -->
       <a
-          href="index.jsp"
+          href="https://fagulha-esperanca.herokuapp.com/index.jsp"
           class="get-started-btn scrollto"
           >Logout</a
         >
@@ -145,7 +145,7 @@
           <a
             data-height="700"
             class="twitter-timeline"
-            href="https://twitter.com/MomentsBrasil/lists/meio-ambiente?ref_src=twsrc%5Etfw"
+            href="https://twitter.com/botqueimadas?ref_src=twsrc%5Etfw"
           >
           </a>
         </article>

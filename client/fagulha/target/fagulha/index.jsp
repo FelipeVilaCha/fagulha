@@ -111,18 +111,18 @@
 	            <div class="modal-body mx-2">
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-email"></i>
-	                <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
-	                <input type="email" name="email" id="defaultForm-email" class="form-control validate">
+	                <label for="defaultForm-email">Email</label>
+	                <input type="email" name="email" id="defaultForm-email" class="form-control validate" required>
 	              </div>
 	    
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-password"></i>
-	                <label data-error="wrong" data-success="right" for="defaultForm-pass">Senha</label>
-	                <input type="password" name="senha" id="defaultForm-pass" class="form-control validate">
+	                <label for="defaultForm-pass">Senha</label>
+	                <input type="password" name="senha" id="defaultForm-pass" class="form-control validate" required>
 	              </div>
 	
 	              <div class="options mt-1">
-	                <p class="mb-0">Não é um membro? <a href="#" class="blue-text">Registrar-se</a></p>
+	                <p class="mb-0">Não é um membro? <a href="#panel8" class="blue-text">Registrar-se</a></p>
 	              </div>
 	            </div>
 	            <!--Footer-->
@@ -143,50 +143,50 @@
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-person"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-text">Nome</label>
-                <input type="text" id="defaultForm-text" name="nome" class="form-control validate">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" class="form-control validate" required>
               </div>
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-number"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-text">Data de Nascimento</label>
-                <input type="date" id="defaultForm-text" name="dataNascimento" class="form-control validate">
+                <label for="dataNascimento">Data de Nascimento</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" class="form-control validate" required>
               </div>
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-location"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-text">Cidade</label>
-                <input type="text" id="defaultForm-text" name="cidade" class="form-control validate">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" name="cidade" class="form-control validate" required>
               </div>
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-location"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-text">Estado</label>
-                <input type="text" id="defaultForm-text" name="estado" class="form-control validate">
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" name="estado" class="form-control validate" required minlength="2" maxlength="2">
               </div>
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-location"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-text">País</label>
-                <input type="text" id="defaultForm-text" name="pais" class="form-control validate">
+                <label for="pais">País</label>
+                <input type="text" id="pais" name="pais" class="form-control validate" required>
               </div>
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-location"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-text">CPF</label>
-                <input type="text" id="defaultForm-text" name="cpf" class="form-control validate">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" name="cpf" class="form-control validate" required minlength="11" maxlength="11">
               </div>
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-email"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
-                <input type="email" id="defaultForm-email" name="email" class="form-control validate">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control validate" required>
               </div>
     			
               <div class="md-form mb-2">
                 <i class="icofont-ui-password"></i>
-                <label data-error="wrong" data-success="right" for="defaultForm-pass">Senha</label>
-                <input type="password" id="defaultForm-pass" name="senha" class="form-control validate">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" class="form-control validate" required>
               </div>
 
               <div class="options mt-1">
@@ -223,6 +223,10 @@
       	} else if((String) session.getAttribute("mensagemIndex") != null && (String) session.getAttribute("mensagemIndex") == "sucesso") { 
     	  	out.println("<div class=\"alert alert-success\" role=\"alert\">");
 			out.println("Cadastro realizado com sucesso! Bem-vindo!");
+			out.println("</div>");
+      	} else if((String) session.getAttribute("mensagemCadastro") != null) { 
+    	  	out.println("<div class=\"alert alert-danger\" role=\"alert\">");
+			out.println("Cadastro não realizado. Usuário já existente!");
 			out.println("</div>");
       	}%>
         <div class="col-xl-6">
@@ -329,7 +333,7 @@
           <a
             data-height="700"
             class="twitter-timeline"
-            href="https://twitter.com/MomentsBrasil/lists/meio-ambiente?ref_src=twsrc%5Etfw"
+            href="https://twitter.com/botqueimadas?ref_src=twsrc%5Etfw"
           >
           </a>
         </article>

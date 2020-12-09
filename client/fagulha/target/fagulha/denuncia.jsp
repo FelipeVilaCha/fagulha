@@ -34,12 +34,7 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
 
-    <!-- =======================================================
-  * Template Name: Presento - v2.0.1
-  * Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
 </head>
 
 <body>
@@ -76,8 +71,8 @@
     <!-- End Header -->
 
      <!--Modal: Login / Register Form-->
-<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog cascading-modal modal-dialog-centered" role="document">
+	<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  	<div class="modal-dialog cascading-modal modal-dialog-centered" role="document">
     <!--Content-->
     <div class="modal-content">
 
@@ -106,18 +101,18 @@
 	            <div class="modal-body mx-2">
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-email"></i>
-	                <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
-	                <input type="email" name="email" id="defaultForm-email" data-rule="required" data-msg="Email inválido" class="form-control validate">
+	                <label for="defaultForm-email">Email</label>
+	                <input type="email" name="email" id="defaultForm-email" class="form-control validate" required>
 	              </div>
 	    
 	              <div class="md-form mb-2">
 	                <i class="icofont-ui-password"></i>
-	                <label data-error="wrong" data-success="right" for="defaultForm-pass">Senha</label>
-	                <input type="password" name="senha" id="defaultForm-pass" data-rule="maxlen:8" data-msg="Informe uma senha" class="form-control validate">
+	                <label for="defaultForm-pass">Senha</label>
+	                <input type="password" name="senha" id="defaultForm-pass" class="form-control validate" required>
 	              </div>
 	
 	              <div class="options mt-1">
-	                <p class="mb-0">Não é um membro? <a href="#" class="blue-text">Registrar-se</a></p>
+	                <p class="mb-0">Não é um membro? <a href="#panel8" class="blue-text">Registrar-se</a></p>
 	              </div>
 	            </div>
 	            <!--Footer-->
@@ -134,60 +129,65 @@
 
             <!--Body-->
             <form action="cadastraUsuario" method="post">
-	            <div class="modal-body mx-2">
-	              
-	              <div class="md-form mb-2">
-	                <i class="icofont-ui-person"></i>
-	                <label data-error="wrong" data-success="right" for="defaultForm-text">Nome</label>
-	                <input type="text" id="defaultForm-text" name="nome" data-rule="required" data-msg="Informe o seu nome" class="form-control validate">
-	              </div>
-	              
-	              <div class="md-form mb-2">
-	                <i class="icofont-ui-number"></i>
-	                <label data-error="wrong" data-success="right" for="defaultForm-text">Data de Nascimento</label>
-	                <input type="date" id="defaultForm-text" name="dataNascimento" data-rule="required" data-msg="Informe uma data válida" class="form-control validate">
-	              </div>
-	              
-	              <div class="md-form mb-2">
-	                <i class="icofont-ui-location"></i>
-	                <label data-error="wrong" data-success="right" for="defaultForm-text">Cidade</label>
-	                <input type="text" id="defaultForm-text" name="cidade" data-rule="required" data-msg="Informe uma cidade" class="form-control validate">
-	              </div>
-	              
-	              <div class="md-form mb-2">
-	                <i class="icofont-ui-location"></i>
-	                <label data-error="wrong" data-success="right" for="defaultForm-text">Estado</label>
-	                <input type="text" id="defaultForm-text" name="estado" data-rule="required" data-msg="Informe um estado" class="form-control validate">
-	              </div>
-	              
-	              <div class="md-form mb-2">
-	                <i class="icofont-ui-location"></i>
-	                <label data-error="wrong" data-success="right" for="defaultForm-text">País</label>
-	                <input type="text" id="defaultForm-text" name="pais" data-rule="required" data-msg="Informe um país" class="form-control validate">
-	              </div>
-	              
-	              <div class="md-form mb-2">
-	                <i class="icofont-ui-location"></i>
-	                <label data-error="wrong" data-success="right" for="defaultForm-text">CPF</label>
-	                <input type="text" id="defaultForm-text" name="cpf" data-rule="required" data-msg="Informe um CPF válido" class="form-control validate">
-	              </div>
-	              
-	              <div class="md-form mb-2">
-	                <i class="icofont-ui-email"></i>
-	                <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
-	                <input type="email" id="defaultForm-email" name="email" data-rule="required" data-msg="Informe um email válido" class="form-control validate">
-	              </div>
-	    			
-	              <div class="md-form mb-2">
-	                <i class="icofont-ui-password"></i>
-	                <label data-error="wrong" data-success="right" for="defaultForm-pass">Senha</label>
-	                <input type="password" id="defaultForm-pass" name="senha" data-rule="required" data-msg="Informe uma senha" class="form-control validate">
-	              </div>
-	            </div>
+            <div class="modal-body mx-2">
+              
+              <div class="md-form mb-2">
+                <i class="icofont-ui-person"></i>
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" class="form-control validate" required>
+              </div>
+              
+              <div class="md-form mb-2">
+                <i class="icofont-ui-number"></i>
+                <label for="dataNascimento">Data de Nascimento</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" class="form-control validate" required>
+              </div>
+              
+              <div class="md-form mb-2">
+                <i class="icofont-ui-location"></i>
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" name="cidade" class="form-control validate" required>
+              </div>
+              
+              <div class="md-form mb-2">
+                <i class="icofont-ui-location"></i>
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" name="estado" class="form-control validate" required minlength="2" maxlength="2">
+              </div>
+              
+              <div class="md-form mb-2">
+                <i class="icofont-ui-location"></i>
+                <label for="pais">País</label>
+                <input type="text" id="pais" name="pais" class="form-control validate" required>
+              </div>
+              
+              <div class="md-form mb-2">
+                <i class="icofont-ui-location"></i>
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" name="cpf" class="form-control validate" required minlength="11" maxlength="11">
+              </div>
+              
+              <div class="md-form mb-2">
+                <i class="icofont-ui-email"></i>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control validate" required>
+              </div>
+    			
+              <div class="md-form mb-2">
+                <i class="icofont-ui-password"></i>
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" class="form-control validate" required>
+              </div>
+
+              <div class="options mt-1">
+                <p class="mb-0">Já tem uma conta? <a href="#panel7" class="blue-text">Clique aqui</a></p>
+              </div>
+    
+            </div>
             <!--Footer-->
             <div class="modal-footer">
               <button type="button" class="btn btn-outline-success waves-effect ml-auto" data-dismiss="modal">Fechar</button>
-              <button type="submit" class="btn btn-success">Finalizar<i class="fas fa-sign-in ml-1"></i></button>
+                <button type="submit" class="btn btn-success">Finalizar<i class="fas fa-sign-in ml-1"></i></button>
             </div>
           </form>
           </div>
@@ -198,8 +198,8 @@
       </div>
     </div>
     <!--/.Content-->
-  </div>
-</div>
+  	</div>
+	</div>
 <!--Modal: Login / Register Form-->
 
     <main id="main">
@@ -211,10 +211,6 @@
         		} else if ((String) session.getAttribute("mensagemDenuncia") == "sucesso") {
         			out.println("<div class=\"alert alert-success\" role=\"alert\">");
         			out.println("Denúncia registrada com sucesso. Entraremos em contato!");
-        			out.println("</div>");
-        		} else if ((String) session.getAttribute("mensagemCadastro") != null){
-        			out.println("<div class=\"alert alert-danger\" role=\"alert\">");
-        			out.println("Usuário já cadastrado!");
         			out.println("</div>");
         		}
         	%>
@@ -280,8 +276,8 @@
                             <div class="form-group d-flex align-items-center">
                                 <i class="icofont-location-pin"></i>
                                 <input type="text" class="form-control" name="estado" id="estado"
-                                    placeholder="Estado" data-rule="required"
-                                    data-msg="Informe o estado do ocorrido">
+                                    placeholder="Estado" data-rule="required minlen:2 maxlen:2"
+                                    data-msg="Informe o estado (sigla) do ocorrido">
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group d-flex align-items-center">
@@ -296,9 +292,6 @@
                                 <textarea class="form-control" name="descricao" rows="5" data-rule="minlen:40"
                                     data-msg="Relate o ocorrido" placeholder="Descrição"></textarea>
                                 <div class="validate"></div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="loading">Carregando</div>
                             </div>
                             <div class="text-center">
                             	<% if((Usuario) session.getAttribute("usuario") != null) { 

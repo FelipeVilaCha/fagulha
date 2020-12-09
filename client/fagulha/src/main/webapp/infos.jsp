@@ -35,13 +35,6 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
-
-    <!-- =======================================================
-  * Template Name: Presento - v2.0.1
-  * Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -51,9 +44,7 @@
             <h1 class="logo mr-auto">
                 <a href="index.html">Fagulha</a>
             </h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
-
+        
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li><a href="index.jsp#header">Home</a></li>
@@ -79,164 +70,135 @@
     <!-- End Header -->
 
     <!--Modal: Login / Register Form-->
-    <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog cascading-modal modal-dialog-centered" role="document">
-            <!--Content-->
-            <div class="modal-content">
+    <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog cascading-modal modal-dialog-centered" role="document">
+    <!--Content-->
+    <div class="modal-content">
 
-                <!--Modal cascading tabs-->
-                <div class="modal-c-tabs">
+      <!--Modal cascading tabs-->
+      <div class="modal-c-tabs">
 
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i
-                                    class="fas fa-user mr-1"></i>
-                                Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i
-                                    class="fas fa-user-plus mr-1"></i>
-                                Registrar-se</a>
-                        </li>
-                    </ul>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+              Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+              Registrar-se</a>
+          </li>
+        </ul>
 
-                    <!-- Tab panels -->
-                    <div class="tab-content">
-                        <!--Panel 7-->
-                        <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+        <!-- Tab panels -->
+        <div class="tab-content">
+          <!--Panel 7-->
+          <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
 
-                            <!--Body-->
-                            <form action="login" method="post">
-                                <div class="modal-body mx-2">
-                                    <div class="md-form mb-2">
-                                        <i class="icofont-ui-email"></i>
-                                        <label data-error="wrong" data-success="right"
-                                            for="defaultForm-email">Email</label>
-                                        <input type="email" name="email" id="defaultForm-email"
-                                            class="form-control validate">
-                                    </div>
+            <!--Body-->
+            <form action="login" method="post">
+	            <div class="modal-body mx-2">
+	              <div class="md-form mb-2">
+	                <i class="icofont-ui-email"></i>
+	                <label for="defaultForm-email">Email</label>
+	                <input type="email" name="email" id="defaultForm-email" class="form-control validate" required>
+	              </div>
+	    
+	              <div class="md-form mb-2">
+	                <i class="icofont-ui-password"></i>
+	                <label for="defaultForm-pass">Senha</label>
+	                <input type="password" name="senha" id="defaultForm-pass" class="form-control validate" required>
+	              </div>
+	
+	              <div class="options mt-1">
+	                <p class="mb-0">Não é um membro? <a href="#panel8" class="blue-text">Registrar-se</a></p>
+	              </div>
+	            </div>
+	            <!--Footer-->
+	            <div class="modal-footer">
+	              <button type="button" class="btn btn-outline-success waves-effect ml-auto" data-dismiss="modal">Fechar</button>
+	              <button type="submit" class="btn btn-success">Entrar<i class="fas fa-sign-in ml-1"></i></button>
+	            </div>
+			</form>
+          </div>
+          <!--/.Panel 7-->
 
-                                    <div class="md-form mb-2">
-                                        <i class="icofont-ui-password"></i>
-                                        <label data-error="wrong" data-success="right"
-                                            for="defaultForm-pass">Senha</label>
-                                        <input type="password" name="senha" id="defaultForm-pass"
-                                            class="form-control validate">
-                                    </div>
+          <!--Panel 8-->
+          <div class="tab-pane fade" id="panel8" role="tabpanel">
 
-                                    <div class="options mt-1">
-                                        <p class="mb-0">Nao e um membro? <a href="#" class="blue-text">Registrar-se</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!--Footer-->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline-success waves-effect ml-auto"
-                                        data-dismiss="modal">Fechar</button>
-                                    <button type="submit" class="btn btn-success">Entrar<i
-                                            class="fas fa-sign-in ml-1"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                        <!--/.Panel 7-->
+            <!--Body-->
+            <form action="cadastraUsuario" method="post">
+            <div class="modal-body mx-2">
+              
+              <div class="md-form mb-2">
+                <i class="icofont-ui-person"></i>
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" class="form-control validate" required>
+              </div>
+              
+              <div class="md-form mb-2">
+                <i class="icofont-ui-number"></i>
+                <label for="dataNascimento">Data de Nascimento</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" class="form-control validate" required>
+              </div>
+              
+              <div class="md-form mb-2">
+                <i class="icofont-ui-location"></i>
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" name="cidade" class="form-control validate" required>
+              </div>
+              
+              <div class="md-form mb-2">
+                <i class="icofont-ui-location"></i>
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" name="estado" class="form-control validate" required minlength="2" maxlength="2">
+              </div>
+              
+              <div class="md-form mb-2">
+                <i class="icofont-ui-location"></i>
+                <label for="pais">País</label>
+                <input type="text" id="pais" name="pais" class="form-control validate" required>
+              </div>
+              
+              <div class="md-form mb-2">
+                <i class="icofont-ui-location"></i>
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" name="cpf" class="form-control validate" required minlength="11" maxlength="11">
+              </div>
+              
+              <div class="md-form mb-2">
+                <i class="icofont-ui-email"></i>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control validate" required>
+              </div>
+    			
+              <div class="md-form mb-2">
+                <i class="icofont-ui-password"></i>
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" class="form-control validate" required>
+              </div>
 
-                        <!--Panel 8-->
-                        <div class="tab-pane fade" id="panel8" role="tabpanel">
-
-                            <!--Body-->
-                            <form action="cadastraUsuario" method="post">
-                                <div class="modal-body mx-2">
-
-                                    <div class="md-form mb-2">
-                                        <i class="icofont-ui-person"></i>
-                                        <label data-error="wrong" data-success="right"
-                                            for="defaultForm-text">Nome</label>
-                                        <input type="text" id="defaultForm-text" name="nome"
-                                            class="form-control validate">
-                                    </div>
-
-                                    <div class="md-form mb-2">
-                                        <i class="icofont-ui-number"></i>
-                                        <label data-error="wrong" data-success="right" for="defaultForm-text">Data de
-                                            Nascimento</label>
-                                        <input type="date" id="defaultForm-text" name="dataNascimento"
-                                            class="form-control validate">
-                                    </div>
-
-                                    <div class="md-form mb-2">
-                                        <i class="icofont-ui-location"></i>
-                                        <label data-error="wrong" data-success="right"
-                                            for="defaultForm-text">Cidade</label>
-                                        <input type="text" id="defaultForm-text" name="cidade"
-                                            class="form-control validate">
-                                    </div>
-
-                                    <div class="md-form mb-2">
-                                        <i class="icofont-ui-location"></i>
-                                        <label data-error="wrong" data-success="right"
-                                            for="defaultForm-text">Estado</label>
-                                        <input type="text" id="defaultForm-text" name="estado"
-                                            class="form-control validate">
-                                    </div>
-
-                                    <div class="md-form mb-2">
-                                        <i class="icofont-ui-location"></i>
-                                        <label data-error="wrong" data-success="right"
-                                            for="defaultForm-text">Pais</label>
-                                        <input type="text" id="defaultForm-text" name="pais"
-                                            class="form-control validate">
-                                    </div>
-
-                                    <div class="md-form mb-2">
-                                        <i class="icofont-ui-location"></i>
-                                        <label data-error="wrong" data-success="right"
-                                            for="defaultForm-text">CPF</label>
-                                        <input type="text" id="defaultForm-text" name="cpf"
-                                            class="form-control validate">
-                                    </div>
-
-                                    <div class="md-form mb-2">
-                                        <i class="icofont-ui-email"></i>
-                                        <label data-error="wrong" data-success="right"
-                                            for="defaultForm-email">Email</label>
-                                        <input type="email" id="defaultForm-email" name="email"
-                                            class="form-control validate">
-                                    </div>
-
-                                    <div class="md-form mb-2">
-                                        <i class="icofont-ui-password"></i>
-                                        <label data-error="wrong" data-success="right"
-                                            for="defaultForm-pass">Senha</label>
-                                        <input type="password" id="defaultForm-pass" name="senha"
-                                            class="form-control validate">
-                                    </div>
-
-                                    <div class="options mt-1">
-                                        <p class="mb-0">Ja tem uma conta? <a href="#panel7" class="blue-text">Clique
-                                                aqui</a></p>
-                                    </div>
-
-                                </div>
-                                <!--Footer-->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline-success waves-effect ml-auto"
-                                        data-dismiss="modal">Fechar</button>
-                                    <button type="submit" class="btn btn-success">Finalizar<i
-                                            class="fas fa-sign-in ml-1"></i></button>
-                                </div>
-                            </form>
-                        </div>
-
-                        <!--/.Panel 8-->
-                    </div>
-
-                </div>
+              <div class="options mt-1">
+                <p class="mb-0">Já tem uma conta? <a href="#panel7" class="blue-text">Clique aqui</a></p>
+              </div>
+    
             </div>
-            <!--/.Content-->
+            <!--Footer-->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-success waves-effect ml-auto" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-success">Finalizar<i class="fas fa-sign-in ml-1"></i></button>
+            </div>
+          </form>
+          </div>
+          
+          <!--/.Panel 8-->
         </div>
-    </div>
+		
+      	</div>
+    	</div>
+   	 	<!--/.Content-->
+  	</div>
+	</div>
     <!--Modal: Login / Register Form-->
 	<!--Modal: Doacoes-->
     <div class="modal fade" id="doeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -252,11 +214,12 @@
               <label>Valor</label
               >
               <input
-                type="text"
+                type="number"
                 name="valor"
-                id="defaultForm-pass"
+                id="valor"
+                placeholder="R$"
                 class="form-control validate"
-              />
+              	required />
             </div>
 
             <div class="md-form mb-2">
@@ -266,9 +229,9 @@
               <input
                 type="text"
                 name="estado"
-                id="defaultForm-pass"
+                id="estado"
                 class="form-control validate"
-              />
+              	required minlength="2" maxlength="2"/>
             </div>
           </div>
           <div class="modal-footer">
@@ -321,14 +284,14 @@
     </section>
         <section id="info" class="tabs">
             <div class="container">
-                <ul class="nav nav-tabs row d-flex">
-                    <li class="nav-item col-4">
+                <ul style="flex-direction:row;flex-wrap: nowrap" class="nav nav-tabs row d-flex">
+                    <li class="nav-item col-3">
                         <a class="nav-link active show" data-toggle="tab" href="#tab-1">
                             <i class="ri-gps-line"></i>
                             <h4 class="d-none d-lg-block">Causas</h4>
                         </a>
                     </li>
-                    <li class="nav-item col-4">
+                    <li class="nav-item col-3">
                         <a class="nav-link" data-toggle="tab" href="#tab-2">
                             <i class="ri-body-scan-line"></i>
                             <h4 class="d-none d-lg-block">
@@ -336,15 +299,15 @@
                             </h4>
                         </a>
                     </li>
-                    <li class="nav-item col-4">
+                    <li class="nav-item col-3">
                         <a class="nav-link" data-toggle="tab" href="#tab-3">
                             <i class="ri-sun-line"></i>
                             <h4 class="d-none d-lg-block">Voce</h4>
                         </a>
                     </li>
-                    <li class="nav-item col-4">
+                    <li class="nav-item col-3">
                         <a class="nav-link" data-toggle="tab" href="#tab-4">
-                            <i class="ri-sun-line"></i>
+                            <i class="ri-lungs-line"></i>
                             <h4 class="d-none d-lg-block">Impacto</h4>
                         </a>
                     </li>
@@ -457,11 +420,11 @@
 									o fogo pode varrer do mapa a floresta densa que ja ocupou a area atingida.
 									As queimadas podem deixar a floresta tao degradada que ela ja nao tem mais cara de floresta. 
 									A invasao de gramineas e a perda da diversidade das especies nao permitem que a floresta volte 
-									a ser densa – o que sao impactos irreversiveis nesse cenario de temperatura subindo e estaçao de seca 
+									a ser densa – o que sao impactos irreversiveis nesse cenario de temperatura subindo e estacao de seca 
 									mais prolongada.
 									
 									Ao lado o mapa de focos desses incendios no ano de 2020, somente em solo brasileiro. Podemos observar que
-									a situação esta fora de controle. Cabe a nos, ajudarmos e nos colocar na linha de frente,
+									a situacao esta fora de controle. Cabe a nos, ajudarmos e nos colocar na linha de frente,
                                 </p>
                                 <p>
                                     <a
