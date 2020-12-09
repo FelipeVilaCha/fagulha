@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <%@page import="com.uff.fagulha.model.Doacoes"%>
 <%@page import="com.uff.fagulha.util.Conversor"%>
 <%@page import="java.util.List"%>
@@ -7,7 +5,7 @@
 <html lang="pt-br">
   <head>
   	<jsp:include page="/consultaDoacoes"/>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title>Fagulha</title>
@@ -65,9 +63,9 @@
 
         <nav class="nav-menu d-none d-lg-block">
           <ul>
-            <li><a href="/admin/usuario.jsp">UsuÃ¡rios</a></li>
-            <li class="active"><a href="/admin/doacoes.jsp">DoaÃ§Ãµes</a></li>
-            <li><a href="/admin/denuncia.jsp">DenÃºncias</a></li>
+            <li><a href="/admin/usuario.jsp">Usuários</a></li>
+            <li class="active"><a href="/admin/doacoes.jsp">Doações</a></li>
+            <li><a href="/admin/denuncia.jsp">Denúncias</a></li>
           </ul>
         </nav>
         <!-- .nav-menu -->
@@ -86,7 +84,7 @@
       <section id="faq" class="faq mt-5">
         <div class="container aos-init aos-animate" data-aos="fade-up">
           <div class="section-title">
-            <h2>DoaÃ§Ãµes</h2>
+            <h2>Doações</h2>
           </div>
 
           <table class="table Doacoes-table pb-3">

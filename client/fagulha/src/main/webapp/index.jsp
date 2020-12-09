@@ -1,12 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <%@page import="java.io.PrintWriter"%>
 <%@page import="com.uff.fagulha.model.Usuario"%>
 <%@page import="java.util.List"%>
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
   <title>Fagulha</title>
@@ -63,8 +61,8 @@
         <ul>
           <li class="active"><a href="#header">Home</a></li>
           <li><a href="#about">Sobre</a></li>
-          <li><a href="infos.jsp">InformaÃ§Ãµes</a></li>
-          <li><a href="denuncia.jsp">DenÃºncias</a></li>
+          <li><a href="infos.jsp">Informações</a></li>
+          <li><a href="denuncia.jsp">Denúncias</a></li>
         </ul>
       </nav>
       <!-- .nav-menu -->
@@ -124,7 +122,7 @@
 	              </div>
 	
 	              <div class="options mt-1">
-	                <p class="mb-0">NÃ£o Ã© um membro? <a href="#panel8" class="blue-text">Registrar-se</a></p>
+	                <p class="mb-0">Não é um membro? <a href="#panel8" class="blue-text">Registrar-se</a></p>
 	              </div>
 	            </div>
 	            <!--Footer-->
@@ -169,7 +167,7 @@
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-location"></i>
-                <label for="pais">PaÃ­s</label>
+                <label for="pais">País</label>
                 <input type="text" id="pais" name="pais" class="form-control validate" required>
               </div>
               
@@ -192,7 +190,7 @@
               </div>
 
               <div class="options mt-1">
-                <p class="mb-0">JÃ¡ tem uma conta? <a href="#panel7" class="blue-text">Clique aqui</a></p>
+                <p class="mb-0">Já tem uma conta? <a href="#panel7" class="blue-text">Clique aqui</a></p>
               </div>
     
             </div>
@@ -220,23 +218,19 @@
       <div class="row">
       <% if((String) session.getAttribute("mensagemIndex") != null && (String) session.getAttribute("mensagemIndex") == "erro") { 
     	  	out.println("<div class=\"alert alert-danger\" role=\"alert\">");
-			out.println("UsuÃ¡rio ou senha incorretos, tente novamente!");
+			out.println("Usuário ou senha incorretos, tente novamente!");
 			out.println("</div>");
       	} else if((String) session.getAttribute("mensagemIndex") != null && (String) session.getAttribute("mensagemIndex") == "sucesso") { 
     	  	out.println("<div class=\"alert alert-success\" role=\"alert\">");
-			out.println("Cadastro realizado com sucesso! Bem-vindo!");
-			out.println("</div>");
-      	} else if((String) session.getAttribute("mensagemCadastro") != null) { 
-    	  	out.println("<div class=\"alert alert-danger\" role=\"alert\">");
-			out.println("Cadastro nÃ£o realizado. UsuÃ¡rio jÃ¡ existente!");
+			out.println("Cadastro realizado com sucesso. Bem-vindo!");
 			out.println("</div>");
       	}%>
         <div class="col-xl-6">
           <h1>Fagulha</h1>
           <h2>
-            Somos um projeto de prevenÃ§Ã£o e combate Ã s queimadas do Brasil
+            Somos um projeto de prevenção e combate às queimadas do Brasil
           </h2>
-          <a href="#about" class="btn-get-started scrollto">Sobre nÃ³s</a>
+          <a href="#about" class="btn-get-started scrollto">Sobre nós</a>
         </div>
       </div>
     </div>
@@ -253,10 +247,10 @@
             <div class="content">
               <h3>O Projeto Fagulha</h3>
               <p>
-                NÃ³s somos um projeto criado para acompanhar todas as notÃ­cias sobre queimadas no Brasil. AlÃ©m disso,
-                somos um canal de denÃºncia contra crimes ambientais com um serviÃ§o de registros de ocorrÃªncias on-line. Venha fazer parte do time!
+                Nós somos um projeto criado para acompanhar todas as notícias sobre queimadas no Brasil. Além disso,
+                somos um canal de denúncia contra crimes ambientais com um serviço de registros de ocorrências on-line. Venha fazer parte do time!
               </p>
-              <a href="denuncia.jsp" class="about-btn"><span>Denuncie jÃ¡!</span> <i class="bx bx-chevron-right"></i></a>
+              <a href="denuncia.jsp" class="about-btn"><span>Denuncie já!</span> <i class="bx bx-chevron-right"></i></a>
             </div>
           </div>
           <div class="col-xl-7 d-flex align-items-stretch">
@@ -266,14 +260,14 @@
                   <i class="icofont-tree"></i>
                   <h4>Conscientize-se</h4>
                   <p>
-                    As queimadas nÃ£o podem ter vez
+                    As queimadas não podem ter vez
                   </p>
                 </div>
                 <div class="col-md-4 icon-box" data-aos-delay="200">
                   <i class="icofont-ui-call"></i>
                   <h4>Denuncie</h4>
                   <p>
-                    Todas as denÃºncias sÃ£o anÃ´nimas
+                    Todas as denúncias são anônimas
                   </p>
                 </div>
                 <div class="col-md-4 icon-box" data-aos-delay="300">
@@ -298,7 +292,7 @@
                         <div class="count-box">
                             <i class="icofont-forest-fire"></i>
                             <span data-toggle="counter-up">21.772</span>
-                            <p>Focos de incÃªndio registrados no Pantanal em 2020</p>
+                            <p>Focos de incêndio registrados no Pantanal em 2020</p>
                         </div>
                     </div>
 
@@ -320,7 +314,7 @@
                                 <span data-toggle="counter-up">23</span>
                                 <span>%</span>
                             </div>
-                            <p>do Pantanal jÃ¡ foi queimado!</p>
+                            <p>do Pantanal já foi queimado!</p>
                         </div>
                     </div>
                 </div>
@@ -328,7 +322,7 @@
         </section>
     <!-- Twitter integration Section -->
     <div class="section-title pt-5">
-        <h2>Ãšltimas NotÃ­cias</h2>
+        <h2>Últimas Notícias</h2>
       </div>
       <div>
         <article style="margin: auto; max-width: 960px; margin-top: 50px">
@@ -361,11 +355,11 @@
             </div>
   
             <div class="col-lg-4 col-md-4 footer-links">
-              <h4>Links Ãšteis</h4>
+              <h4>Links Úteis</h4>
               <ul>
                 <li><i class="bx bx-chevron-right"></i> <a href="www.ibama.gov.br">Ibama</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="https://www.embrapa.br/territorial/">Embrapa</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="https://www.sosma.org.br/">SOS Mata AtlÃ¢ntica</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://www.sosma.org.br/">SOS Mata Atlântica</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="https://www.greenpeace.org/brasil/">Greenpeace</a></li>
               </ul>
             </div>
@@ -377,7 +371,7 @@
   
         <div class="mr-md-auto text-center text-md-left">
           <div class="copyright">
-            Â© <strong><span>Fagulha</span></strong>. Todos os direitos reservados
+            © <strong><span>Fagulha</span></strong>. Todos os direitos reservados
           </div>  
         </div>
         <div class="social-links text-center text-md-right pt-3 pt-md-0">

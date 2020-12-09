@@ -222,11 +222,7 @@
 			out.println("</div>");
       	} else if((String) session.getAttribute("mensagemIndex") != null && (String) session.getAttribute("mensagemIndex") == "sucesso") { 
     	  	out.println("<div class=\"alert alert-success\" role=\"alert\">");
-			out.println("Cadastro realizado com sucesso! Bem-vindo!");
-			out.println("</div>");
-      	} else if((String) session.getAttribute("mensagemCadastro") != null) { 
-    	  	out.println("<div class=\"alert alert-danger\" role=\"alert\">");
-			out.println("Cadastro não realizado. Usuário já existente!");
+			out.println("Cadastro realizado com sucesso. Bem-vindo!");
 			out.println("</div>");
       	}%>
         <div class="col-xl-6">

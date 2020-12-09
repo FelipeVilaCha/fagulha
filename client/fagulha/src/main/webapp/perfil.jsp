@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="com.uff.fagulha.model.Usuario"%>
 <%@page import="com.uff.fagulha.model.Doacoes"%>
@@ -10,7 +8,7 @@
 <html lang="pt-br">
     
     <head>
-        <meta charset="UTF-8" />
+        <meta charset="utf-8" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     
         <title>Fagulha</title>
@@ -57,8 +55,8 @@
                     <ul>
                         <li><a href="index.jsp#header">Home</a></li>
                         <li><a href="index.jsp#about">Sobre</a></li>
-                        <li><a href="infos.jsp">InformaÃ§Ãµes</a></li>
-                        <li><a href="denuncia.jsp">DenÃºncias</a></li>
+                        <li><a href="infos.jsp">Informações</a></li>
+                        <li><a href="denuncia.jsp">Denúncias</a></li>
                     </ul>
                 </nav>
                 <!-- .nav-menu -->
@@ -122,7 +120,7 @@
 	              </div>
 	
 	              <div class="options mt-1">
-	                <p class="mb-0">NÃ£o Ã© um membro? <a href="#panel8" class="blue-text">Registrar-se</a></p>
+	                <p class="mb-0">Não é um membro? <a href="#panel8" class="blue-text">Registrar-se</a></p>
 	              </div>
 	            </div>
 	            <!--Footer-->
@@ -167,7 +165,7 @@
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-location"></i>
-                <label for="pais">PaÃ­s</label>
+                <label for="pais">País</label>
                 <input type="text" id="pais" name="pais" class="form-control validate" required>
               </div>
               
@@ -190,7 +188,7 @@
               </div>
 
               <div class="options mt-1">
-                <p class="mb-0">JÃ¡ tem uma conta? <a href="#panel7" class="blue-text">Clique aqui</a></p>
+                <p class="mb-0">Já tem uma conta? <a href="#panel7" class="blue-text">Clique aqui</a></p>
               </div>
     
             </div>
@@ -315,7 +313,7 @@
                                         <div class="validate"></div>
                                     </div>
                                     <div class="form-group">
-                                        <label>PaÃ­s</label>
+                                        <label>País</label>
                                         <input type="text" class="form-control" name="pais" id="pais"
                                             placeholder="<%=((Usuario) session.getAttribute("usuario")).getPais()%>" required>
                                     </div>
@@ -332,7 +330,7 @@
     
                         <div class="col-lg-8">
                             <div class="section-title">
-                                <h4>HistÃ³rico de denÃºncias</h4>
+                                <h4>Histórico de denúncias</h4>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
@@ -343,7 +341,7 @@
                                                     <th scope="col">#</th>
                                                     <th scope="col">Cidade</th>
                                                     <th scope="col">Estado</th>
-                                                    <th scope="col">DescriÃ§Ã£o</th>
+                                                    <th scope="col">Descrição</th>
                                                     <th scope="col">Status</th>
                                                 </tr>
                                             </thead>
@@ -367,7 +365,7 @@
                                 </div>
                             </div>
     						<div class="section-title">
-                                <h4>HistÃ³rico de doaÃ§Ãµes</h4>
+                                <h4>Histórico de doações</h4>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
@@ -425,11 +423,11 @@
                         </div>
     
                         <div class="col-lg-4 col-md-4 footer-links">
-                            <h4>Links Ãšteis</h4>
+                            <h4>Links Úteis</h4>
                             <ul>
                                 <li><i class="bx bx-chevron-right"></i> <a href="www.ibama.gov.br">Ibama</a></li>
                					<li><i class="bx bx-chevron-right"></i> <a href="https://www.embrapa.br/territorial/">Embrapa</a></li>
-                				<li><i class="bx bx-chevron-right"></i> <a href="https://www.sosma.org.br/">SOS Mata AtlÃ¢ntica</a></li>
+                				<li><i class="bx bx-chevron-right"></i> <a href="https://www.sosma.org.br/">SOS Mata Atlântica</a></li>
                 				<li><i class="bx bx-chevron-right"></i> <a href="https://www.greenpeace.org/brasil/">Greenpeace</a></li>
                             </ul>
                         </div>
@@ -441,7 +439,7 @@
     
                 <div class="mr-md-auto text-center text-md-left">
                     <div class="copyright">
-                        Â© <strong><span>Fagulha</span></strong>. Todos os direitos reservados
+                        © <strong><span>Fagulha</span></strong>. Todos os direitos reservados
                     </div>
                 </div>
                 <div class="social-links text-center text-md-right pt-3 pt-md-0">

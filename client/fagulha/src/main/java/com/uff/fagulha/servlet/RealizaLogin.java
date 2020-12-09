@@ -60,6 +60,7 @@ public class RealizaLogin extends HttpServlet {
             if(usuario.getId() != 0 && usuario.getSenha().equals(senhaEncriptada)){
             	session.setAttribute("usuario", usuario);
             	session.removeAttribute("mensagemIndex");
+            	session.removeAttribute("mensagemCadastro");
             } else {
             	session.setAttribute("mensagemIndex", "erro");
             }
