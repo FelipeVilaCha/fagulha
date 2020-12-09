@@ -53,11 +53,12 @@ public class UsuarioService {
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_XML)
     public void put(@PathParam("id") int id, Usuario usuario) {
-        try {
+    	try {
             new UsuarioDAO().updateUsuario(usuario);
+        
         } catch(Exception ex) {
           
-        } 
+        }
     }
     
     @PUT

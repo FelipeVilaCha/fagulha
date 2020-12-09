@@ -77,7 +77,7 @@ public class Conversor {
 	public int getIdade(Date date) {
 		LocalDate nascimento = LocalDate.of(date.getYear(), date.getMonth(), date.getDay());
 		LocalDate now = LocalDate.now();
-		return Period.between(nascimento, now).getYears();
+		return (Period.between(nascimento, now).getYears()) % 1900;
 	}
 	
 	public String getStatus(int status) {
