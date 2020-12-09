@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="com.uff.fagulha.model.Denuncia"%>
 <%@page import="com.uff.fagulha.util.Conversor"%>
 <%@page import="java.util.List"%>
@@ -5,7 +7,7 @@
 <html lang="pt-br">
   <head>
   	<jsp:include page="/consultaDenuncias"/>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title>Fagulha</title>
@@ -63,9 +65,9 @@
 
         <nav class="nav-menu d-none d-lg-block">
           <ul>
-            <li><a href="/admin/usuario.jsp">Usuários</a></li>
-            <li class="active"><a href="/admin/doacoes.jsp">Doações</a></li>
-            <li><a href="/admin/denuncia.jsp">Denúncias</a></li>
+            <li><a href="/admin/usuario.jsp">UsuÃ¡rios</a></li>
+            <li class="active"><a href="/admin/doacoes.jsp">DoaÃ§Ãµes</a></li>
+            <li><a href="/admin/denuncia.jsp">DenÃºncias</a></li>
           </ul>
         </nav>
         <!-- .nav-menu -->
@@ -83,15 +85,15 @@
       <section id="faq" class="faq mt-5">
         <div class="container aos-init aos-animate" data-aos="fade-up">
           <div class="section-title">
-            <h2>Denúncias</h2>
+            <h2>DenÃºncias</h2>
           </div>
-
+			<div class="table-responsive">
           <table class="table denuncia-table pb-3">
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Localização</th>
-                <th scope="col">Descrição</th>
+                <th scope="col">LocalizaÃ§Ã£o</th>
+                <th scope="col">DescriÃ§Ã£o</th>
                 <th scope="col">Status</th>
                 <th scope="col">Atualizar</th>
                 <th scope="col"></th>
@@ -109,7 +111,7 @@
                         	out.println("<td class=\"font-weight-bold\">" + new Conversor().getStatus(d.getStatus()) + "</td>");
                         	out.println("<td class=\"font-weight-bold\">");
                         	out.println("<select name=\"status\" style=\"border-radius: 4px; padding: 0.35rem\" class=\"custom-select\" id=\"inputGroupSelect01\">");
-                        	out.println("<option selected>Status</option><option value=\"1\">Em análise</option><option value=\"2\">Encaminhada</option><option value=\"3\">Rejeitada</option>");
+                        	out.println("<option selected>Status</option><option value=\"1\">Em anÃ¡lise</option><option value=\"2\">Encaminhada</option><option value=\"3\">Rejeitada</option>");
                         	out.println("</select></td>");
                         	out.println("<td><button type=\"submit\" class=\"btn get-started-btn\">Salvar</button></td>");
                         	out.println("</form>");
@@ -118,6 +120,7 @@
                 }%>
             </tbody>
           </table>
+          </div>
         </div>
       </section>
     </main>

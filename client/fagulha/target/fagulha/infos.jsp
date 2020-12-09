@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="com.uff.fagulha.model.Usuario"%>
@@ -5,7 +7,7 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title>Fagulha</title>
@@ -42,15 +44,15 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
             <h1 class="logo mr-auto">
-                <a href="index.html">Fagulha</a>
+                <a href="index.jsp">Fagulha</a>
             </h1>
         
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li><a href="index.jsp#header">Home</a></li>
                     <li><a href="index.jsp#about">Sobre</a></li>
-                    <li class="active"><a href="infos.jsp">Informacoes</a></li>
-                    <li><a href="denuncia.jsp">Denuncias</a></li>
+                    <li><a href="infos.jsp">Informações</a></li>
+                    <li><a href="denuncia.jsp">Denúncias</a></li>
                 </ul>
             </nav>
             <!-- .nav-menu -->
@@ -111,7 +113,7 @@
 	              </div>
 	
 	              <div class="options mt-1">
-	                <p class="mb-0">Não é um membro? <a href="#panel8" class="blue-text">Registrar-se</a></p>
+	                <p class="mb-0">Nao é um membro? <a href="#panel8" class="blue-text">Registrar-se</a></p>
 	              </div>
 	            </div>
 	            <!--Footer-->
@@ -206,7 +208,7 @@
         <div class="modal-content">
         <form action="criaDoacoes" method="post">
           <div class="modal-header">
-            <h5 class="modal-title">Doacoes</h5>
+            <h5 class="modal-title">Doações</h5>
           </div>
           <div class="modal-body mx-2">
             <div class="md-form mb-2">
@@ -254,7 +256,7 @@
     <main id="main">
         <div style="margin-top: 100px">
             <h1 style="text-align: center; padding: 5rem 0 2rem 0">
-                Numero de focos por estado em 24 horas
+                Número de focos por estado em 24 horas
             </h1>
             <div style="width:800px;margin:auto">
             <canvas width="700" height="700" id="myChart"></canvas>
@@ -268,9 +270,9 @@
         <div class="row no-gutters">
           <div class="content col-xl-5 d-flex align-center">
             <div class="content">
-              <h3>Faca a sua doacao</h3>
+              <h3>Faca a sua doação</h3>
               <p>
-                Nos do time fagulha levamos muito a serio as nossas contribuicoes. Ajudando um estado, voce pode estar ajudando a vida de milhoes nesta e em futuras geracoes. Venha conosco.
+                Nós do time Fagulha levamos muito a sério as nossas contribuições. Ajudando um estado, você pode estar ajudando a vida de milhões nesta e em futuras gerações. Venha conosco!
               </p>
               <% if((Usuario) session.getAttribute("usuario") == null) {
         		 	out.println("<a href=\"#modalLRForm\" class=\"about-btn\" data-toggle=\"modal\" data-target=\"#modalLRForm\"><span>Doe!</span> <i class=\"bx bx-chevron-left\"></i></a>");
@@ -295,14 +297,14 @@
                         <a class="nav-link" data-toggle="tab" href="#tab-2">
                             <i class="ri-body-scan-line"></i>
                             <h4 class="d-none d-lg-block">
-                                Solucoes
+                                Soluções
                             </h4>
                         </a>
                     </li>
                     <li class="nav-item col-3">
                         <a class="nav-link" data-toggle="tab" href="#tab-3">
                             <i class="ri-sun-line"></i>
-                            <h4 class="d-none d-lg-block">Voce</h4>
+                            <h4 class="d-none d-lg-block">Você</h4>
                         </a>
                     </li>
                     <li class="nav-item col-3">
@@ -318,23 +320,23 @@
                         <div class="row">
                             <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0" data-aos-delay="100">
                                 <p>
-                                    A Amazonia possui condicoes climaticas que fazem dela uma
-                                    floresta umida e de altas temperaturas durante o ano todo,
-                                    praticamente. Dessa forma, quando ha focos de queimadas e
-                                    incendios florestais, nao ha possibilidade desse fogo ter
-                                    sido causado de forma natural, e sim artificial, antropica.
-                                    Assim, podemos encontrar tres tipos de queimadas no bioma:
+                                    A Amazônia possui condições climáticas que fazem dela uma
+                                    floresta úmida e de altas temperaturas durante o ano todo,
+                                    praticamente. Dessa forma, quando há focos de queimadas e
+                                    incêndios florestais, não há possibilidade desse fogo ter
+                                    sido causado de forma natural, e sim artificial, antrópica.
+                                    Assim, podemos encontrar três tipos de queimadas no bioma:
                                 </p>
                                 <ul>
                                     <li>- Renovar o pasto;</li>
-                                    <li>- Desmatar grandes areas;</li>
+                                    <li>- Desmatar grandes áreas;</li>
                                     <li>
-                                        - Fogo em areas ja desmatadas, o chamado incendio
+                                        - Fogo em areas já desmatadas, o chamado incêndio
                                         florestal.
                                     </li>
                                 </ul>
                                 <p>
-                                    <a href="https://mundoeducacao.uol.com.br/geografia/queimadas-na-amazonia.htm"></a>
+                                    <a href="https://mundoeducacao.uol.com.br/geografia/queimadas-na-amazonia.htm">Aprenda mais</a>
                                 </p>
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos-delay="200">
@@ -346,38 +348,37 @@
                         <div class="row">
                             <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
                                 <p>
-                                    O professor Thiago Izzo, pos-doutor em Biologia,
+                                    O professor Thiago Izzo, pós-doutor em Biologia,
                                     especialista em Ecologia Evolutiva e professor da
-                                    Universidade Federal de Mato Grosso (UFMT) defende que, alem
-                                    de remediar, e necessario impedir que o fogo ocorra
-                                    novamente. “e importante que no ano que vem, em marco,
-                                    abril, no maximo, ja comecem campanhas de prevencao e
-                                    fiscalizacao. Desta vez, a atencao esta se dando no final do
+                                    Universidade Federal de Mato Grosso (UFMT) defende que, além
+                                    de remediar, é necessario impedir que o fogo ocorra
+                                    novamente. "É importante que no ano que vem, em março,
+                                    abril, no máximo, já comecem campanhas de prevenção e
+                                    fiscalização. Desta vez, a atenção está se dando no final do
                                     processo”, lamenta.
                                 </p>
                                 <br />
                                 <p>
-                                    O pesquisador compara os incendios deste ano a pandemia do
-                                    novo coronavirus: “Nunca haviamos passado por isso”. Apesar
-                                    do historico de fogo que ja existe no bioma em epocas e
-                                    extensoes especificas, Izzo afirma que o incendio desta vez
-                                    “atingiu proporcoes ineditas”. Uma alternativa para os
-                                    proximos anos, acrescenta, e a tecnica de fogo controlado,
-                                    ja utilizada antes, para impedir que esses grandes incendios
-                                    saiam do controle. As florestas sao enormes campos de
-                                    material combustivel, como folhas secas, madeiras e
-                                    arbustos. Com as chamas controladas, parte do material ja
-                                    vai ser consumido, havendo muito menos materia para ser
+                                    O pesquisador compara os incêndios deste ano a pandemia do
+                                    novo coronavírus: “Nunca havíamos passado por isso”. Apesar
+                                    do histórico de fogo que já existe no bioma em épocas e
+                                    extensões específicas, Izzo afirma que o incêndio desta vez
+                                    “atingiu proporções inéditas”. Uma alternativa para os
+                                    próximos anos, acrescenta, é a técnica de fogo controlado,
+                                    já utilizada antes, para impedir que esses grandes incêndios
+                                    saiam do controle. As florestas são enormes campos de
+                                    material combustível, como folhas secas, madeiras e
+                                    arbustos. Com as chamas controladas, parte do material já
+                                    vai ser consumido, havendo muito menos matéria para ser
                                     queimada quando a seca chegar.
                                     
-                                    Ao lado, um mapa que demonstra, no Brasil, as areas em 
-                                    protecao ambiental levando em conta os diferentes biomas
-                                    brasileiros. A hora de acordar e ajudar a nossa nacao e planeta
-                                    e agora. 
+                                    Ao lado, um mapa que demonstra, no Brasil, as áreas em 
+                                    proteção ambiental levando em conta os diferentes biomas
+                                    brasileiros. A hora de acordar e ajudar a nossa nação e planeta
+                                    é agora. 
                                 </p>
                                 <p>
-                                    <a
-                                        href="https://exame.com/esg/o-que-e-preciso-para-acabar-com-as-queimadas-no-pantanal/"></a>
+                                    <a href="https://exame.com/esg/o-que-e-preciso-para-acabar-com-as-queimadas-no-pantanal/"> O que fazer?</a>
                                 </p>
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 text-center">
@@ -389,19 +390,19 @@
                         <div class="row">
                             <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
                                 <p>
-                                    Grandes biomas do Brasil estao em chamas e as imagens que
-                                    chegam a todo o momento sao preocupantes. Saiba como agir
-                                    pela protecao ambiental
+                                    Grandes biomas do Brasil estão em chamas e as imagens que
+                                    chegam a todo o momento são preocupantes. Saiba como agir
+                                    pela proteção ambiental
                                 </p>
                                 <ul>
-                                    <li>- Compartilhe informacoes</li>
+                                    <li>- Compartilhe informações</li>
                                     <li>- Fiscalize</li>
                                     <li>- Cobre das autoridades</li>
-                                    <li>- Participe de iniciativas de protecao ambiental</li>
+                                    <li>- Participe de iniciativas de proteção ambiental</li>
                                 </ul>
                                 <p>
                                     <a
-                                        href="https://www.greenpeace.org/brasil/blog/7-coisas-que-voce-pode-fazer-pelo-pantanal/">De os seus primeiros passos</a>
+                                        href="https://www.greenpeace.org/brasil/blog/7-coisas-que-voce-pode-fazer-pelo-pantanal/">Dê os seus primeiros passos</a>
                                 </p>
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 text-center">
@@ -413,22 +414,22 @@
                         <div class="row">
                             <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
                                 <p>
-                                    A resposta ao fogo pode ser abrupta. "Em anos de seca, a mortalidade pode chegar a 
-                                    90% das arvores, principalmente na borda da floresta amazonica", diz um estudo cientifico 
+                                    A resposta ao fogo pode ser abrupta. Em anos de seca, a mortalidade pode chegar a 
+                                    "90% das arvores, principalmente na borda da floresta amazônica", diz um estudo científico 
                                     publicado recentemente, mencionando os impactos das queimadas.
-									Com a alta mortalidade, a paisagem muda drasticamente e nessas condiçoes, 
-									o fogo pode varrer do mapa a floresta densa que ja ocupou a area atingida.
-									As queimadas podem deixar a floresta tao degradada que ela ja nao tem mais cara de floresta. 
-									A invasao de gramineas e a perda da diversidade das especies nao permitem que a floresta volte 
-									a ser densa – o que sao impactos irreversiveis nesse cenario de temperatura subindo e estacao de seca 
+									Com a alta mortalidade, a paisagem muda drasticamente e nessas condições, 
+									o fogo pode varrer do mapa a floresta densa que já ocupou a área atingida.
+									As queimadas podem deixar a floresta tão degradada que ela já nao tem mais cara de floresta. 
+									A invasão de gramíneas e a perda da diversidade das espécies não permitem que a floresta volte 
+									a ser densa – o que são impactos irreversíveis nesse cenário de temperatura subindo e estação de seca 
 									mais prolongada.
 									
-									Ao lado o mapa de focos desses incendios no ano de 2020, somente em solo brasileiro. Podemos observar que
-									a situacao esta fora de controle. Cabe a nos, ajudarmos e nos colocar na linha de frente,
+									Ao lado o mapa de focos desses incêndios no ano de 2020, somente em solo brasileiro. Podemos observar que
+									a situação está fora de controle. Cabe a nós ajudarmos e nos colocar na linha de frente.
                                 </p>
                                 <p>
                                     <a
-                                        href="https://www.dw.com/pt-br/queimadas-na-amaz%C3%B4nia-podem-causar-danos-irrevers%C3%ADveis/a-50161460">Fonte da informacao</a>
+                                        href="https://www.dw.com/pt-br/queimadas-na-amaz%C3%B4nia-podem-causar-danos-irrevers%C3%ADveis/a-50161460">Fonte da informação</a>
                                 </p>
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 text-center">
@@ -461,7 +462,7 @@
                     </div>
 
                     <div class="col-lg-4 col-md-4 footer-links">
-                        <h4>Links uteis</h4>
+                        <h4>Links úteis</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="www.ibama.gov.br">Ibama</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a

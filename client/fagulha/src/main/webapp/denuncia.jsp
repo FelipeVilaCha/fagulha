@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="com.uff.fagulha.model.Denuncia"%>
@@ -6,7 +8,7 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title>Fagulha</title>
@@ -51,8 +53,8 @@
                 <ul>
                     <li><a href="index.jsp#header">Home</a></li>
                     <li><a href="index.jsp#about">Sobre</a></li>
-                    <li><a href="infos.jsp">Informações</a></li>
-                    <li class="active"><a href="denuncia.jsp">Denúncias</a></li>
+                    <li><a href="infos.jsp">InformaÃ§Ãµes</a></li>
+                    <li class="active"><a href="denuncia.jsp">DenÃºncias</a></li>
                 </ul>
             </nav>
             <!-- .nav-menu -->
@@ -112,7 +114,7 @@
 	              </div>
 	
 	              <div class="options mt-1">
-	                <p class="mb-0">Não é um membro? <a href="#panel8" class="blue-text">Registrar-se</a></p>
+	                <p class="mb-0">NÃ£o Ã© um membro? <a href="#panel8" class="blue-text">Registrar-se</a></p>
 	              </div>
 	            </div>
 	            <!--Footer-->
@@ -157,7 +159,7 @@
               
               <div class="md-form mb-2">
                 <i class="icofont-ui-location"></i>
-                <label for="pais">País</label>
+                <label for="pais">PaÃ­s</label>
                 <input type="text" id="pais" name="pais" class="form-control validate" required>
               </div>
               
@@ -180,7 +182,7 @@
               </div>
 
               <div class="options mt-1">
-                <p class="mb-0">Já tem uma conta? <a href="#panel7" class="blue-text">Clique aqui</a></p>
+                <p class="mb-0">JÃ¡ tem uma conta? <a href="#panel7" class="blue-text">Clique aqui</a></p>
               </div>
     
             </div>
@@ -206,11 +208,11 @@
         <section id="faq" class="faq mt-5">
         	<%  if ((String) session.getAttribute("mensagemDenuncia") == "erro") {
         			out.println("<div class=\"alert alert-danger\" role=\"alert\">");
-        			out.println("Não foi possível completar sua denúncia, tente novamente!");
+        			out.println("NÃ£o foi possÃ­vel completar sua denÃºncia, tente novamente!");
         			out.println("</div>");
         		} else if ((String) session.getAttribute("mensagemDenuncia") == "sucesso") {
         			out.println("<div class=\"alert alert-success\" role=\"alert\">");
-        			out.println("Denúncia registrada com sucesso. Entraremos em contato!");
+        			out.println("DenÃºncia registrada com sucesso. Entraremos em contato!");
         			out.println("</div>");
         		}
         	%>
@@ -218,7 +220,7 @@
             <div class="container aos-init aos-animate" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Últimas Denúncias</h2>
+                    <h2>Ãšltimas DenÃºncias</h2>
                 </div>
                 
                 <jsp:include page="/consultaDenuncias"/>                
@@ -229,7 +231,7 @@
                     		if(d.getStatus() == 2){
                     			out.println("<ul class=\"faq-list aos-init aos-animate\" data-aos=\"fade-down\"></ul>");
                         		out.println("<li>");
-                        		out.println("<a data-toggle=\"collapse\" class=\"collapsed\" href=\"#faq" + index + "\" aria-expanded=\"false\">" + "Incêndio em " + d.getCidade() + ", " + d.getEstado() + "<i class=\"bx bx-chevron-down icon-show\"></i></a>");
+                        		out.println("<a data-toggle=\"collapse\" class=\"collapsed\" href=\"#faq" + index + "\" aria-expanded=\"false\">" + "IncÃªndio em " + d.getCidade() + ", " + d.getEstado() + "<i class=\"bx bx-chevron-down icon-show\"></i></a>");
                         		out.println("<div id=\"faq" + index + "\" class=\"collapse\" data-parent=\".faq-list\">");
                         		out.println("<p>" + d.getDescricao() + "</p>");
                         		out.println("</div>");
@@ -245,7 +247,7 @@
             <div class="container aos-init aos-animate" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Denuncie já</h2>
+                    <h2>Denuncie jÃ¡</h2>
                 </div>
 
                 <div class="row aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
@@ -263,7 +265,7 @@
                             <div class="col-md-6">
                                 <div class="info-box">
                                     <i class="bx bx-phone-call"></i>
-                                    <h3>Ligue já</h3>
+                                    <h3>Ligue jÃ¡</h3>
                                     <p>0800 2544 341</p>
                                 </div>
                             </div>
@@ -272,26 +274,20 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <form action="criaDenuncia" method="post" role="form" class="php-email-form">
+                        <form action="criaDenuncia" method="post" role="form">
                             <div class="form-group d-flex align-items-center">
                                 <i class="icofont-location-pin"></i>
                                 <input type="text" class="form-control" name="estado" id="estado"
-                                    placeholder="Estado" data-rule="required minlen:2 maxlen:2"
-                                    data-msg="Informe o estado (sigla) do ocorrido">
-                                <div class="validate"></div>
+                                    placeholder="Estado" required minlength="2" maxlength="2">
                             </div>
                             <div class="form-group d-flex align-items-center">
                                 <i class="icofont-location-pin"></i>
                                 <input type="text" class="form-control" name="cidade" id="cidade"
-                                    placeholder="Cidade" data-rule="required"
-                                    data-msg="Informe a cidade do ocorrido">
-                                <div class="validate"></div>
+                                    placeholder="Cidade" required>
                             </div>
                             <div class="form-group d-flex align-items-start">
                                 <i class="icofont-file-document"></i>
-                                <textarea class="form-control" name="descricao" rows="5" data-rule="minlen:40"
-                                    data-msg="Relate o ocorrido" placeholder="Descrição"></textarea>
-                                <div class="validate"></div>
+                                <textarea class="form-control" name="descricao" rows="5" placeholder="DescriÃ§Ã£o" required minlength="30"></textarea>
                             </div>
                             <div class="text-center">
                             	<% if((Usuario) session.getAttribute("usuario") != null) { 
@@ -330,11 +326,11 @@
             </div>
   
             <div class="col-lg-4 col-md-4 footer-links">
-              <h4>Links Úteis</h4>
+              <h4>Links Ãšteis</h4>
               <ul>
                 <li><i class="bx bx-chevron-right"></i> <a href="www.ibama.gov.br">Ibama</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="https://www.embrapa.br/territorial/">Embrapa</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="https://www.sosma.org.br/">SOS Mata Atlântica</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://www.sosma.org.br/">SOS Mata AtlÃ¢ntica</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="https://www.greenpeace.org/brasil/">Greenpeace</a></li>
               </ul>
             </div>
@@ -346,7 +342,7 @@
   
         <div class="mr-md-auto text-center text-md-left">
           <div class="copyright">
-            © <strong><span>Fagulha</span></strong>. Todos os direitos reservados
+            Â© <strong><span>Fagulha</span></strong>. Todos os direitos reservados
           </div>  
         </div>
         <div class="social-links text-center text-md-right pt-3 pt-md-0">

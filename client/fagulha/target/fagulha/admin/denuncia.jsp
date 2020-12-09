@@ -85,7 +85,7 @@
           <div class="section-title">
             <h2>Denúncias</h2>
           </div>
-
+			<div class="table-responsive">
           <table class="table denuncia-table pb-3">
             <thead>
               <tr>
@@ -118,6 +118,7 @@
                 }%>
             </tbody>
           </table>
+          </div>
         </div>
       </section>
     </main>

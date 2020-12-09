@@ -296,7 +296,7 @@
                         <div class="count-box">
                             <i class="icofont-forest-fire"></i>
                             <span data-toggle="counter-up">21.772</span>
-                            <p>Focos de incendio registrados no Pantanal em 2020</p>
+                            <p>Focos de incêndio registrados no Pantanal em 2020</p>
                         </div>
                     </div>
 
@@ -318,7 +318,7 @@
                                 <span data-toggle="counter-up">23</span>
                                 <span>%</span>
                             </div>
-                            <p>do Pantanal ja foi queimado!</p>
+                            <p>do Pantanal já foi queimado!</p>
                         </div>
                     </div>
                 </div>

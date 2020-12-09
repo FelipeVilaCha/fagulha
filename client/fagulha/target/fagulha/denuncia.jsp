@@ -272,26 +272,20 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <form action="criaDenuncia" method="post" role="form" class="php-email-form">
+                        <form action="criaDenuncia" method="post" role="form">
                             <div class="form-group d-flex align-items-center">
                                 <i class="icofont-location-pin"></i>
                                 <input type="text" class="form-control" name="estado" id="estado"
-                                    placeholder="Estado" data-rule="required minlen:2 maxlen:2"
-                                    data-msg="Informe o estado (sigla) do ocorrido">
-                                <div class="validate"></div>
+                                    placeholder="Estado" required minlength="2" maxlength="2">
                             </div>
                             <div class="form-group d-flex align-items-center">
                                 <i class="icofont-location-pin"></i>
                                 <input type="text" class="form-control" name="cidade" id="cidade"
-                                    placeholder="Cidade" data-rule="required"
-                                    data-msg="Informe a cidade do ocorrido">
-                                <div class="validate"></div>
+                                    placeholder="Cidade" required>
                             </div>
                             <div class="form-group d-flex align-items-start">
                                 <i class="icofont-file-document"></i>
-                                <textarea class="form-control" name="descricao" rows="5" data-rule="minlen:40"
-                                    data-msg="Relate o ocorrido" placeholder="Descrição"></textarea>
-                                <div class="validate"></div>
+                                <textarea class="form-control" name="descricao" rows="5" placeholder="Descrição" required minlength="30"></textarea>
                             </div>
                             <div class="text-center">
                             	<% if((Usuario) session.getAttribute("usuario") != null) { 

@@ -78,13 +78,16 @@ public class EditaUsuario extends HttpServlet {
 	            usuario.setSenha(new Encriptador().encripta(request.getParameter("senha")));
 	            usuario.setPais(request.getParameter("pais"));
 	            usuario.setEmail(request.getParameter("email"));
-	            usuario.setFoto(request.getParameter("file"));
-	           
+	            
+	            if(usuario.getFoto() != null) {
+	            	usuario.setFoto(usuario.getFoto());
+	            }
+	            
 	            Invocation call = wt.request().buildPut(Entity.xml(usuario));
 	            call.invoke();
         	}
         	
-            request.getRequestDispatcher("/perfil.jsp").forward(request, response);    
+        	response.sendRedirect("https://fagulha-esperanca.herokuapp.com/perfil.jsp");
         } catch (URISyntaxException ex) {
             Logger.getLogger(EditaUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }

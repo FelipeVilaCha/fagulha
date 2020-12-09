@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="com.uff.fagulha.model.Usuario"%>
 <%@page import="com.uff.fagulha.util.Conversor"%>
 <%@page import="java.util.List"%>
@@ -5,7 +7,7 @@
 <html lang="pt-br">
   <head>
   	<jsp:include page="/getUsuarios"/>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title>Fagulha</title>
@@ -63,9 +65,9 @@
 
         <nav class="nav-menu d-none d-lg-block">
           <ul>
-            <li class="active"><a href="/admin/usuario.jsp">Usuários</a></li>
-            <li><a href="/admin/doacoes.jsp">Doações</a></li>
-            <li><a href="/admin/denuncia.jsp">Denúncias</a></li>
+            <li class="active"><a href="/admin/usuario.jsp">UsuÃ¡rios</a></li>
+            <li><a href="/admin/doacoes.jsp">DoaÃ§Ãµes</a></li>
+            <li><a href="/admin/denuncia.jsp">DenÃºncias</a></li>
           </ul>
         </nav>
         <!-- .nav-menu -->
@@ -83,7 +85,7 @@
       <section id="faq" class="faq mt-5">
         <div class="container aos-init aos-animate" data-aos="fade-up">
           <div class="section-title">
-            <h2>Usuários</h2>
+            <h2>UsuÃ¡rios</h2>
           </div>
 
           <table class="table denuncia-table pb-3">
@@ -94,7 +96,7 @@
                 <th scope="col">E-mail</th>
                 <th scope="col">Cidade</th>
                 <th scope="col">Estado</th>
-                <th scope="col">País</th>
+                <th scope="col">PaÃ­s</th>
                 <th scope="col">Data de nascimento</th>
                 <th scope="col">CPF</th>
               </tr>

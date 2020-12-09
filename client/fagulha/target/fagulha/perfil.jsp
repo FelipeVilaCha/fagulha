@@ -334,7 +334,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="info-box p-3">
+                                    <div class="info-box p-3 table-responsive">
                                         <table class="table denuncia-table">
                                             <thead>
                                                 <tr>

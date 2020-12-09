@@ -1,10 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <%@page import="java.io.PrintWriter"%>
 <%@page import="com.uff.fagulha.model.Usuario"%>
 <%@page import="java.util.List"%>
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
   <title>Fagulha</title>
@@ -59,9 +61,9 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-            <li><a href="/admin/usuario.jsp">Usuários</a></li>
-            <li class="active"><a href="/admin/doacoes.jsp">Doações</a></li>
-            <li><a href="/admin/denuncia.jsp">Denúncias</a></li>
+            <li><a href="/admin/usuario.jsp">UsuÃ¡rios</a></li>
+            <li class="active"><a href="/admin/doacoes.jsp">DoaÃ§Ãµes</a></li>
+            <li><a href="/admin/denuncia.jsp">DenÃºncias</a></li>
         </ul>
       </nav>
       <!-- .nav-menu -->
@@ -80,9 +82,9 @@
         <div class="col-xl-6">
           <h1>Fagulha</h1>
           <h2>
-            Somos um projeto de prevenção e combate às queimadas do Brasil
+            Somos um projeto de prevenÃ§Ã£o e combate Ã s queimadas do Brasil
           </h2>
-          <a href="#about" class="btn-get-started scrollto">Sobre nós</a>
+          <a href="#about" class="btn-get-started scrollto">Sobre nÃ³s</a>
         </div>
       </div>
     </div>
@@ -99,8 +101,8 @@
             <div class="content">
               <h3>O Projeto Fagulha</h3>
               <p>
-                Nós somos um projeto criado para acompanhar todas as notícias sobre queimadas no Brasil. Além disso,
-                somos um canal de denúncia contra crimes ambientais com um serviço de registros de ocorrências on-line. Venha fazer parte do time!
+                NÃ³s somos um projeto criado para acompanhar todas as notÃ­cias sobre queimadas no Brasil. AlÃ©m disso,
+                somos um canal de denÃºncia contra crimes ambientais com um serviÃ§o de registros de ocorrÃªncias on-line. Venha fazer parte do time!
               </p>
             </div>
           </div>
@@ -111,14 +113,14 @@
                   <i class="icofont-tree"></i>
                   <h4>Conscientize-se</h4>
                   <p>
-                    As queimadas não podem ter vez
+                    As queimadas nÃ£o podem ter vez
                   </p>
                 </div>
                 <div class="col-md-4 icon-box" data-aos-delay="200">
                   <i class="icofont-ui-call"></i>
                   <h4>Denuncie</h4>
                   <p>
-                    Todas as denúncias são anônimas
+                    Todas as denÃºncias sÃ£o anÃ´nimas
                   </p>
                 </div>
                 <div class="col-md-4 icon-box" data-aos-delay="300">
@@ -138,7 +140,7 @@
     <!-- End About Section -->
     <!-- Twitter integration Section -->
     <div class="section-title pt-5">
-        <h2>Últimas Notícias</h2>
+        <h2>Ãšltimas NotÃ­cias</h2>
       </div>
       <div>
         <article style="margin: auto; max-width: 960px; margin-top: 50px">
@@ -171,11 +173,11 @@
             </div>
   
             <div class="col-lg-4 col-md-4 footer-links">
-              <h4>Links Úteis</h4>
+              <h4>Links Ãšteis</h4>
               <ul>
                 <li><i class="bx bx-chevron-right"></i> <a href="www.ibama.gov.br">Ibama</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="https://www.embrapa.br/territorial/">Embrapa</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="https://www.sosma.org.br/">SOS Mata Atlântica</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://www.sosma.org.br/">SOS Mata AtlÃ¢ntica</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="https://www.greenpeace.org/brasil/">Greenpeace</a></li>
               </ul>
             </div>
@@ -187,7 +189,7 @@
   
         <div class="mr-md-auto text-center text-md-left">
           <div class="copyright">
-            © <strong><span>Fagulha</span></strong>. Todos os direitos reservados
+            Â© <strong><span>Fagulha</span></strong>. Todos os direitos reservados
           </div>  
         </div>
         <div class="social-links text-center text-md-right pt-3 pt-md-0">
